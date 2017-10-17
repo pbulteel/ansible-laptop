@@ -1,0 +1,79 @@
+- name: "Install dropbox."
+  apt: 
+    deb: https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_2015.10.28_amd64.deb
+
+- name: "Add Repo: Chrome"
+  apt_repository:
+    repo: deb http://dl.google.com/linux/chrome/deb/ stable main
+    state: present
+    filename: 'google-chrome'
+
+- name: "Add Repo: Skype"
+  apt_repository:
+    repo: deb [arch=amd64] https://repo.skype.com/deb stable main
+    state: present
+    filename: 'skype-stable'
+
+- name: "Add Repo: Steam"
+  apt_repository:
+    repo: deb [arch=amd64,i386] http://repo.steampowered.com/steam/ precise steam
+    state: present
+    filename: 'steam'
+
+- name: "Add Repo: Steam src"
+  apt_repository:
+    repo: deb-src [arch=amd64,i386] http://repo.steampowered.com/steam/ precise steam
+    state: present
+    filename: 'steam'
+
+- name: "Add Repo: Oracle Jave"
+  apt_repository:
+    repo: deb http://ppa.launchpad.net/webupd8team/java/ubuntu zesty main
+    state: present
+    filename: 'webupd8team-ubuntu-java-zesty'
+
+- name: "Add Repo: Telix"
+  apt_repository:
+    repo: deb http://ppa.launchpad.net/webupd8team/terminix/ubuntu zesty main
+    state: present
+    filename: 'webupd8team-ubuntu-terminix-zesty'
+
+- name: "Add Repo: MEGAsync"
+  apt_repository:
+    repo: deb https://mega.nz/linux/MEGAsync/xUbuntu_17.04/ ./
+    state: present
+    filename: 'megasync'
+
+- name: "Add Repo: Sky"
+  apt_repository:
+    repo: deb https://tel.red/repos/ubuntu yakkety non-free
+    state: present
+    filename: 'telred'
+
+- name: "Default packages that should be installed on all hosts"
+  action: >
+    {{ ansible_pkg_mgr }} name={{ item }} state=installed update_cache=yes
+  with_items:
+  - byobu
+  - vim
+  - shutter
+  - inkscape
+  - gimp
+  - blender
+  - backintime-gnome
+  - kgpg
+  - hexchat
+  - linssid
+  - wireshark
+  - vlc
+  - vokoscreen
+  - minicom
+  - hplip
+  - gtk-recordmydesktop
+  - google-chrome-stable
+  - megasync
+  - oracle-java8-installer
+  - tilix
+  - skypeforlinux
+  - sky
+

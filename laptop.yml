@@ -1,0 +1,6 @@
+---
+- name: "Install laptop."
+  hosts: laptop
+  become: true
+  roles:
+    - basic
