@@ -40,13 +40,13 @@
 
 - name: "Add Repo: MEGAsync"
   apt_repository:
-    repo: deb https://mega.nz/linux/MEGAsync/xUbuntu_17.04/ ./
+    repo: deb https://mega.nz/linux/MEGAsync/xUbuntu_17.10/ ./
     state: present
     filename: 'megasync'
 
 - name: "Add Repo: Sky"
   apt_repository:
-    repo: deb https://tel.red/repos/ubuntu yakkety non-free
+    repo: deb https://tel.red/repos/ubuntu zesty non-free
     state: present
     filename: 'telred'
 
