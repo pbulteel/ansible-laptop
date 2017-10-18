@@ -60,8 +60,8 @@
 
 - name: "Add GnuPG key: MEGA"
   apt-key: 
-    url: https://mega.nz/linux/MEGAsync/xUbuntu_17.10/Release.key
-    state: present
+    keyserver: keyserver.ubuntu.com
+    id: BF8B66E01192CBA2E72201294B4E7A9523ACD201
 
 - name: "Add Repo: MEGAsync"
   apt_repository:
