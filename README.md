@@ -9,12 +9,25 @@ This is just my ansible playbook to setup my laptop with the applications that I
   * MEGA
   * TelRed (sky  * lync client)
 - Software installed
+  * byobu
+  * vim
+  * shutter
+  * inkscape
+  * gimp
+  * blender
+  * backintime-gnome
+  * kgpg
+  * hexchat
+  * linssid
+  * wireshark
+  * vlc
+  * vokoscreen
+  * minicom
+  * hplip
+  * gtk-recordmydesktop
   * google-chrome-stable
-  * steam
+  * megasync
   * oracle-java8-installer
   * tilix
-  * megasync
-  * dropbox
-  * sky
   * skypeforlinux
-
+  * sky 
