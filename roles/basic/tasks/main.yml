@@ -1,9 +1,9 @@
 - name: "Install dropbox."
-  apt: 
+  apt:
     deb: https://linux.dropbox.com/packages/ubuntu/dropbox_2015.10.28_amd64.deb
 
-- name: "Add GnuPG key: Chrome."
-  apt-key: 
+- name: "Add GnuPG key - Chrome."
+  apt_key:
     url: https://dl.google.com/linux/linux_signing_key.pub
     state: present
 
@@ -14,7 +14,7 @@
     filename: 'google-chrome'
 
 - name: "Add GnuPG key: Skype."
-  apt-key: 
+  apt_key:
     url: https://repo.skype.com/data/SKYPE-GPG-KEY
     state: present
 
@@ -25,7 +25,7 @@
     filename: 'skype-stable'
 
 - name: "Add GnuPG key: Steam."
-  apt-key: 
+  apt_key:
     url: http://repo.steampowered.com/steam/signature.gpg
     state: present
 
@@ -42,7 +42,7 @@
     filename: 'steam'
 
 - name: "Add GnuPG key: Oracle Java/Tilix (webupd8team)."
-  apt-key: 
+  apt_key:
     keyserver: keyserver.ubuntu.com
     id: 7B2C3B0889BF5709A105D03AC2518248EEA14886
 
@@ -59,7 +59,7 @@
     filename: 'webupd8team-ubuntu-terminix-zesty'
 
 - name: "Add GnuPG key: MEGA"
-  apt-key: 
+  apt_key:
     keyserver: keyserver.ubuntu.com
     id: BF8B66E01192CBA2E72201294B4E7A9523ACD201
 
@@ -70,7 +70,7 @@
     filename: 'megasync'
 
 - name: "Add GnuPG key: Sky"
-  apt-key: 
+  apt_key:
     keyserver: keyserver.ubuntu.com
     id: 9454C19A66B920C83DDF696E07C8CCAFCE49F8C5
 
@@ -109,6 +109,6 @@
 
 - name: "Install packages that are installed via snap"
   command: snap install {{ item }}
-  with_items: 
+  with_items:
   - atom
   - keepassxc
