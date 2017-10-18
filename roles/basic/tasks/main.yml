@@ -2,17 +2,32 @@
   apt: 
     deb: https://linux.dropbox.com/packages/ubuntu/dropbox_2015.10.28_amd64.deb
 
+- name: "Add GnuPG key: Chrome."
+  apt-key: 
+    url: https://dl.google.com/linux/linux_signing_key.pub
+    state: present
+
 - name: "Add Repo: Chrome"
   apt_repository:
     repo: deb http://dl.google.com/linux/chrome/deb/ stable main
     state: present
     filename: 'google-chrome'
 
+- name: "Add GnuPG key: Skype."
+  apt-key: 
+    url: https://repo.skype.com/data/SKYPE-GPG-KEY
+    state: present
+
 - name: "Add Repo: Skype"
   apt_repository:
     repo: deb [arch=amd64] https://repo.skype.com/deb stable main
     state: present
     filename: 'skype-stable'
+
+- name: "Add GnuPG key: Steam."
+  apt-key: 
+    url: http://repo.steampowered.com/steam/signature.gpg
+    state: present
 
 - name: "Add Repo: Steam"
   apt_repository:
@@ -26,7 +41,12 @@
     state: present
     filename: 'steam'
 
-- name: "Add Repo: Oracle Jave"
+- name: "Add GnuPG key: Oracle Java/Tilix (webupd8team)."
+  apt-key: 
+    keyserver: keyserver.ubuntu.com
+    id: 7B2C3B0889BF5709A105D03AC2518248EEA14886
+
+- name: "Add Repo: Oracle Java (webupd8team)"
   apt_repository:
     repo: deb http://ppa.launchpad.net/webupd8team/java/ubuntu zesty main
     state: present
@@ -38,11 +58,21 @@
     state: present
     filename: 'webupd8team-ubuntu-terminix-zesty'
 
+- name: "Add GnuPG key: MEGA"
+  apt-key: 
+    url: https://mega.nz/linux/MEGAsync/xUbuntu_17.10/Release.key
+    state: present
+
 - name: "Add Repo: MEGAsync"
   apt_repository:
     repo: deb https://mega.nz/linux/MEGAsync/xUbuntu_17.10/ ./
     state: present
     filename: 'megasync'
+
+- name: "Add GnuPG key: Sky"
+  apt-key: 
+    keyserver: keyserver.ubuntu.com
+    id: 9454C19A66B920C83DDF696E07C8CCAFCE49F8C5
 
 - name: "Add Repo: Sky"
   apt_repository:
