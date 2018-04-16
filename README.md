@@ -8,6 +8,7 @@ This is just my ansible playbook to setup my laptop with the applications that I
   * Tilix (webupd8team)
   * MEGA
   * TelRed (sky  * lync client)
+  * keepassxc
 - Software installed
   * byobu
   * vim
@@ -21,9 +22,8 @@ This is just my ansible playbook to setup my laptop with the applications that I
   * linssid
   * wireshark
   * vlc
-  * vokoscreen
   * minicom
-  * hplip
+  * hplip-gui
   * gtk-recordmydesktop
   * google-chrome-stable
   * megasync
@@ -31,3 +31,16 @@ This is just my ansible playbook to setup my laptop with the applications that I
   * tilix
   * skypeforlinux
   * sky 
+  * git
+  * ruby
+  * ruby-dev
+  * rubygems
+  * build-essential
+  * devscripts
+  * apache2
+  * certbot
+  * python-certbot-apache
+  * remmina
+  * gdebi-core
+  * mssh
+  * libproc-queue-perl
