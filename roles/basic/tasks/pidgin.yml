@@ -1,0 +1,18 @@
+- name: "Install pidgin"
+  apt: 
+    name: pidgin
+    state: installed 
+    update_cache: yes
+
+- name: "Install pidgin-sipe"
+  apt: 
+    name: pidgin-sipe
+    state: installed 
+    update_cache: yes
+
+- name: "Add ENV Variable to pidgin shell script"
+  lineinfile:
+    path: /usr/bin/pidgin
+    regexp: '^/usr/bin/pidgin.orig \$\*'
+    line: 'NSS_SSL_CBC_RANDOM_IV=0 /usr/bin/pidgin.orig $*'
+    backrefs: yes

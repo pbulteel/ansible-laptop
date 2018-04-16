@@ -1,0 +1,11 @@
+- name: "Add GnuPG key: zoom."
+  apt_key:
+    url: https://zoom.us/linux/download/pubkey
+    state: present
+
+- name: "Install zoom"
+  apt: 
+    deb: https://zoom.us/client/latest/zoom_amd64.deb
+    state: installed 
+    update_cache: yes
+

@@ -1,0 +1,27 @@
+- name: "Install ruby"
+  apt: 
+    name: ruby
+    state: installed 
+    update_cache: yes
+
+- name: "Install ruby-dev"
+  apt: 
+    name: ruby-dev
+    state: installed 
+    update_cache: yes
+
+- name: "Install rubygems"
+  apt: 
+    name: rubygems
+    state: installed 
+    update_cache: yes
+
+- name: "Install build-essential"
+  apt: 
+    name: build-essential
+    state: installed 
+    update_cache: yes
+
+
+- name: "Install fpm"
+  command: gem install --no-ri --no-rdoc fpm

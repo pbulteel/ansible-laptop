@@ -1,0 +1,12 @@
+- name: "Add Repo: Oracle Java (webupd8team)"
+  apt_repository:
+    repo: ppa:webupd8team/java
+    state: present
+    filename: 'webupd8team-ubuntu-java'
+
+- name: "Install Oracle-java8-installer"
+  apt: 
+    name: oracle-java8-installer
+    state: installed 
+    update_cache: yes
+

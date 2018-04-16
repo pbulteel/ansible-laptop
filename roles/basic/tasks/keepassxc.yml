@@ -1,0 +1,11 @@
+- name: "Add GnuPG and Repo: Keepassxc"
+  apt_repository: 
+    repo: ppa:phoerious/keepassxc
+    state: present
+
+- name: "Install keepassxc"
+  apt: 
+    name: keepassxc
+    state: installed 
+    update_cache: yes
+

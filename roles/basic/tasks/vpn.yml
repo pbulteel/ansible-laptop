@@ -1,0 +1,77 @@
+- name: "Install networkmanager-vpnc-gnome"
+  apt: 
+    name: network-manager-vpnc-gnome
+    state: installed 
+    update_cache: yes
+
+- name: "Install network-manager-openvpn-gnome"
+  apt: 
+    name: network-manager-openvpn-gnome
+    state: installed 
+    update_cache: yes
+
+- name: "Install network-manager-ssh-gnome"
+  apt: 
+    name: network-manager-ssh-gnome
+    state: installed 
+    update_cache: yes
+
+- name: "Install dnsmasq"
+  apt: 
+    name: dnsmasq
+    state: installed 
+    update_cache: yes
+
+- name: "Add o2 wifi dns to Network Manager dnsmasq.d"
+  copy:
+    content: | 
+      {% for adr in o2wifi_dnsmasq_addresses %}
+      address=/{{ adr.domain }}/{{ adr.ip }}
+      {% endfor %} 
+    dest: /etc/NetworkManager/dnsmasq.d/o2wifi.conf
+    owner: root
+    group: root
+    mode: 644
+    backup: yes
+  notify:
+    - restart dnsmasq
+
+- name: "Add o2 dns to Network Manager dnsmasq.d"
+  copy:
+    content: | 
+      {% for adr in o2_dnsmasq_addresses %}
+      address=/{{ adr.domain }}/{{ adr.ip }}
+      {% endfor %} 
+    dest: /etc/NetworkManager/dnsmasq.d/o2.conf
+    owner: root
+    group: root
+    mode: 644
+    backup: yes
+  notify:
+    - restart dnsmasq
+
+- name: "Add unify wifi dns to Network Manager dnsmasq.d"
+  copy:
+    content: | 
+      {% for adr in unify_dnsmasq_addresses %}
+      address=/{{ adr.domain }}/{{ adr.ip }}
+      {% endfor %} 
+    dest: /etc/NetworkManager/dnsmasq.d/unify.conf
+    owner: root
+    group: root
+    mode: 644
+    backup: yes
+  notify:
+    - restart dnsmasq
+
+- name: "Enable dnsmasq base in network manager"
+  lineinfile: >
+    dest=/etc/NetworkManager/NetworkManager.conf
+    regexp='^dns=dnsmasq'
+    line='dns=dnsmasq'
+    owner=root
+    group=root
+    mode=0644
+    backup=yes
+  notify:
+    - restart network manager

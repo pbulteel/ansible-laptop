@@ -1,114 +1,20 @@
-- name: "Install dropbox."
-  apt:
-    deb: https://linux.dropbox.com/packages/ubuntu/dropbox_2015.10.28_amd64.deb
+#- include: dropbox.yml
+#- include: chrome.yml
+#- include: skype.yml
+#- include: steam.yml
+#- include: oracle.yml
+#- include: tilix.yml
+#- include: mega.yml
+#- include: sky.yml
+#- include: keepassxc.yml
+#- include: pidgin.yml
+#- include: packages.yml
+#- include: fpm.yml
+- include: vpn.yml
+#- include: zoom.yml
 
-- name: "Add GnuPG key - Chrome."
-  apt_key:
-    url: https://dl.google.com/linux/linux_signing_key.pub
-    state: present
 
-- name: "Add Repo: Chrome"
-  apt_repository:
-    repo: deb http://dl.google.com/linux/chrome/deb/ stable main
-    state: present
-    filename: 'google-chrome'
-
-- name: "Add GnuPG key: Skype."
-  apt_key:
-    url: https://repo.skype.com/data/SKYPE-GPG-KEY
-    state: present
-
-- name: "Add Repo: Skype"
-  apt_repository:
-    repo: deb [arch=amd64] https://repo.skype.com/deb stable main
-    state: present
-    filename: 'skype-stable'
-
-- name: "Add GnuPG key: Steam."
-  apt_key:
-    url: http://repo.steampowered.com/steam/signature.gpg
-    state: present
-
-- name: "Add Repo: Steam"
-  apt_repository:
-    repo: deb [arch=amd64,i386] http://repo.steampowered.com/steam/ precise steam
-    state: present
-    filename: 'steam'
-
-- name: "Add Repo: Steam src"
-  apt_repository:
-    repo: deb-src [arch=amd64,i386] http://repo.steampowered.com/steam/ precise steam
-    state: present
-    filename: 'steam'
-
-- name: "Add GnuPG key: Oracle Java/Tilix (webupd8team)."
-  apt_key:
-    keyserver: keyserver.ubuntu.com
-    id: 7B2C3B0889BF5709A105D03AC2518248EEA14886
-
-- name: "Add Repo: Oracle Java (webupd8team)"
-  apt_repository:
-    repo: deb http://ppa.launchpad.net/webupd8team/java/ubuntu zesty main
-    state: present
-    filename: 'webupd8team-ubuntu-java-zesty'
-
-- name: "Add Repo: Tilix"
-  apt_repository:
-    repo: deb http://ppa.launchpad.net/webupd8team/terminix/ubuntu zesty main
-    state: present
-    filename: 'webupd8team-ubuntu-terminix-zesty'
-
-- name: "Add GnuPG key: MEGA"
-  apt_key:
-    keyserver: keyserver.ubuntu.com
-    id: BF8B66E01192CBA2E72201294B4E7A9523ACD201
-
-- name: "Add Repo: MEGAsync"
-  apt_repository:
-    repo: deb https://mega.nz/linux/MEGAsync/xUbuntu_17.10/ ./
-    state: present
-    filename: 'megasync'
-
-- name: "Add GnuPG key: Sky"
-  apt_key:
-    keyserver: keyserver.ubuntu.com
-    id: 9454C19A66B920C83DDF696E07C8CCAFCE49F8C5
-
-- name: "Add Repo: Sky"
-  apt_repository:
-    repo: deb https://tel.red/repos/ubuntu zesty non-free
-    state: present
-    filename: 'telred'
-
-- name: "Default packages that should be installed on all hosts"
-  action: >
-    {{ ansible_pkg_mgr }} name={{ item }} state=installed update_cache=yes
-  with_items:
-  - byobu
-  - vim
-  - shutter
-  - inkscape
-  - gimp
-  - blender
-  - backintime-gnome
-  - kgpg
-  - hexchat
-  - linssid
-  - wireshark
-  - vlc
-  - vokoscreen
-  - minicom
-  - hplip
-  - gtk-recordmydesktop
-  - google-chrome-stable
-  - megasync
-  - oracle-java8-installer
-  - tilix
-  - skypeforlinux
-  - sky
-
-- name: "Install packages that are installed via snap"
-  command: snap install {{ item }}
-  with_items:
-  - atom
-  - keepassxc
+#- name: "Install packages that are installed via snap"
+  #command: snap install {{ item }} --classic
+  #with_items:
+  #- atom

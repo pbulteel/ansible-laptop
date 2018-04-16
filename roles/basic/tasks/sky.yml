@@ -1,0 +1,17 @@
+- name: "Add GnuPG key: Sky"
+  apt_key:
+    keyserver: keyserver.ubuntu.com
+    id: 9454C19A66B920C83DDF696E07C8CCAFCE49F8C5
+
+- name: "Add Repo: Sky"
+  apt_repository:
+    repo: deb https://tel.red/repos/ubuntu zesty non-free
+    state: present
+    filename: 'telred'
+
+- name: "Install sky"
+  apt: 
+    name: sky
+    state: installed 
+    update_cache: yes
+

@@ -1,0 +1,3 @@
+{% for adr in dnsmasq_addresses %}
+address=/{{ adr.domain }}/{{ adr.ip }}
+{% endfor %}
