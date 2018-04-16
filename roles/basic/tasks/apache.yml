@@ -1,0 +1,37 @@
+- name: "Install apache2"
+  apt: 
+    name: apache2
+    state: installed 
+    update_cache: yes
+
+- name: "Install certbot"
+  apt: 
+    name: certbot
+    state: installed 
+    update_cache: yes
+
+- name: "Install python-certbot-apache"
+  apt: 
+    name: python-certbot-apache
+    state: installed 
+    update_cache: yes
+
+- name: "Install openssl"
+  apt: 
+    name: openssl
+    state: installed 
+    update_cache: yes
+
+- name: "Configure Secure ciphers"
+  lineinfile: 
+    path: /etc/apache2/mod-available
+    regexp: "^SSLCipher"
+    line: "  SSLCipherSuite \"EECDH+ECDSA+AESGCM EECDH+aRSA+AESGCM EECDH+ECDSA+SHA384 EECDH+ECDSA+SHA256 EECDH+aRSA+SHA384 EECDH+aRSA+SHA256 EECDH+AESGCM EECDH EDH+AESGCM EDH+aRSA HIGH !MEDIUM !LOW !aNULL !eNULL !LOW !RC4 !MD5 !EXP !PSK !SRP !DSS !DES !3DES\""
+    handler: apache-restart
+
+- name: "Install openssl"
+  apt: 
+    name: openssl
+    state: installed 
+    update_cache: yes
+

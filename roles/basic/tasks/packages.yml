@@ -124,24 +124,6 @@
     state: installed 
     update_cache: yes
 
-- name: "Install apache2"
-  apt: 
-    name: apache2
-    state: installed 
-    update_cache: yes
-
-- name: "Install certbot"
-  apt: 
-    name: certbot
-    state: installed 
-    update_cache: yes
-
-- name: "Install python-certbot-apache"
-  apt: 
-    name: python-certbot-apache
-    state: installed 
-    update_cache: yes
-
 - name: "Install remmina"
   apt: 
     name: remmina
