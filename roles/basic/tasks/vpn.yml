@@ -8,19 +8,21 @@
   apt: 
     name: network-manager-openvpn-gnome
     state: installed 
-    update_cache: yes
+
+- name: "Install network-manager-openconnect-gnome"
+  apt: 
+    name: network-manager-openconnect-gnome
+    state: installed 
 
 - name: "Install network-manager-ssh-gnome"
   apt: 
     name: network-manager-ssh-gnome
     state: installed 
-    update_cache: yes
 
 - name: "Install dnsmasq"
   apt: 
     name: dnsmasq
     state: installed 
-    update_cache: yes
 
 - name: "Add o2 wifi dns to Network Manager dnsmasq.d"
   copy:

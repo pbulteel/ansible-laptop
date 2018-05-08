@@ -8,143 +8,139 @@
   apt: 
     name: vim
     state: installed 
-    update_cache: yes
 
 - name: "Install shutter"
   apt: 
     name: shutter
     state: installed 
-    update_cache: yes
 
 - name: "Install inkscape"
   apt: 
     name: inkscape
     state: installed 
-    update_cache: yes
 
 - name: "Install gimp"
   apt: 
     name: gimp
     state: installed 
-    update_cache: yes
 
 - name: "Install blender"
   apt: 
     name: blender
     state: installed 
-    update_cache: yes
 
 - name: "Install backintime-gnome"
   apt: 
     name: backintime-gnome
     state: installed 
-    update_cache: yes
 
 - name: "Install kgpg"
   apt: 
     name: kgpg
     state: installed 
-    update_cache: yes
 
 - name: "Install hexchat"
   apt: 
     name: hexchat
     state: installed 
-    update_cache: yes
 
 - name: "Install linssid"
   apt: 
     name: linssid
     state: installed 
-    update_cache: yes
 
 - name: "Install wireshark"
   apt: 
     name: wireshark
     state: installed 
-    update_cache: yes
 
 - name: "Install vlc"
   apt: 
     name: vlc
     state: installed 
-    update_cache: yes
 
 - name: "Install minicom"
   apt: 
     name: minicom
     state: installed 
-    update_cache: yes
 
 - name: "Install hplip-gui"
   apt: 
     name: hplip
     state: installed 
-    update_cache: yes
 
 - name: "Install gtk-recordmydesktop"
   apt: 
     name: gtk-recordmydesktop
     state: installed 
-    update_cache: yes
 
 - name: "Install git"
   apt: 
     name: git
     state: installed 
-    update_cache: yes
 
 - name: "Install ruby"
   apt: 
     name: ruby
     state: installed 
-    update_cache: yes
 
 - name: "Install ruby-dev"
   apt: 
     name: ruby-dev
     state: installed 
-    update_cache: yes
 
 - name: "Install rubygems"
   apt: 
     name: rubygems
     state: installed 
-    update_cache: yes
 
 - name: "Install build-essential"
   apt: 
     name: build-essential
     state: installed 
-    update_cache: yes
 
 - name: "Install devscripts"
   apt: 
     name: devscripts
     state: installed 
-    update_cache: yes
 
 - name: "Install remmina"
   apt: 
     name: remmina
     state: installed 
-    update_cache: yes
 
 - name: "Install gdebi"
   apt: 
     name: gdebi-core
     state: installed 
-    update_cache: yes
 
 - name: "Install mssh"
   apt: 
     name: mssh
     state: installed 
-    update_cache: yes
 
 - name: "Install libproc-queue-perl - for dist"
   apt: 
     name: libproc-queue-perl
     state: installed 
-    update_cache: yes
+
+- name: "Install ipcalc"
+  apt: 
+    name: ipcalc
+    state: installed 
+
+- name: "Install keepnote"
+  apt: 
+    name: keepnote
+    state: installed 
+
+- name: "Install nmap"
+  apt: 
+    name: nmap
+    state: installed 
+
+- name: "Install ntp"
+  apt: 
+    name: ntp
+    state: installed 
 

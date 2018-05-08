@@ -8,9 +8,9 @@
 #- include: sky.yml
 #- include: keepassxc.yml
 #- include: pidgin.yml
-#- include: packages.yml
+- include: packages.yml
 #- include: fpm.yml
-- include: vpn.yml
+#- include: vpn.yml
 #- include: zoom.yml
 
 

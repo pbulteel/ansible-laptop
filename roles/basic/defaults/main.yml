@@ -1,10 +1,16 @@
 o2wifi_dnsmasq_addresses:
   -
-    domain: o2wifi.co.uk
+    domain: man.o2wifi.co.uk
     ip: 172.16.9.2
   - 
-    domain: o2wifi.co.uk
+    domain: man.o2wifi.co.uk
     ip: 172.16.9.3
+  -
+    domain: mer.o2wifi.co.uk
+    ip: 172.16.5.2
+  - 
+    domain: mer.o2wifi.co.uk
+    ip: 172.16.5.3
 
 o2_dnsmasq_addresses:
   -
