@@ -1,0 +1,17 @@
+- name: "Add GnuPG key - Multisystem."
+  apt_key:
+    url: http://liveusb.info/multisystem/depot/multisystem.asc
+    state: present
+
+- name: "Add Repo: Multisystem"
+  apt_repository:
+    repo: deb http://liveusb.info/multisystem/depot all main
+    state: present
+    filename: 'multisystem'
+
+- name: "Install multisystem"
+  apt: 
+    name: multisystem
+    state: installed 
+    update_cache: yes
+
