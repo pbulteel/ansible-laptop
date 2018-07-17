@@ -5,7 +5,7 @@
 
 - name: "Add Repo: MEGAsync"
   apt_repository:
-    repo: deb https://mega.nz/linux/MEGAsync/xUbuntu_17.10/ ./
+    repo: deb https://mega.nz/linux/MEGAsync/xUbuntu_18.04/ ./
     state: present
     filename: 'megasync'
 

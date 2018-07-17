@@ -1,20 +1,21 @@
-#- include: dropbox.yml
-#- include: chrome.yml
-#- include: skype.yml
-#- include: steam.yml
-#- include: oracle.yml
-#- include: tilix.yml
-#- include: mega.yml
-#- include: sky.yml
-#- include: keepassxc.yml
-#- include: pidgin.yml
+- include: dropbox.yml
+- include: chrome.yml
+- include: skype.yml
+- include: steam.yml
+- include: oracle.yml
+- include: tilix.yml
+- include: mega.yml
+- include: multisystem.yml
+- include: sky.yml
+- include: keepassxc.yml
+- include: pidgin.yml
 - include: packages.yml
-#- include: fpm.yml
-#- include: vpn.yml
-#- include: zoom.yml
+- include: fpm.yml
+- include: vpn.yml
+- include: zoom.yml
 
 
-#- name: "Install packages that are installed via snap"
-  #command: snap install {{ item }} --classic
-  #with_items:
-  #- atom
+- name: "Install packages that are installed via snap"
+  command: snap install {{ item }} --classic
+  with_items:
+  - atom
