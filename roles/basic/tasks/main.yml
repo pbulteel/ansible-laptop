@@ -11,6 +11,7 @@
 - include: pidgin.yml
 - include: packages.yml
 - include: fpm.yml
+- include: uget.yml
 - include: vpn.yml
 - include: zoom.yml
 
@@ -19,3 +20,4 @@
   command: snap install {{ item }} --classic
   with_items:
   - atom
+  - notepad-plus-plus

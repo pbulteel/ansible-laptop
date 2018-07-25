@@ -1,0 +1,16 @@
+- name: "Add Repo: uget Integrator"
+  apt_repository:
+    repo: ppa:uget-team/ppa
+    state: present
+    filename: 'uget-integrator'
+
+- name: "Install uget integrator"
+  apt: 
+    name: uget-integrator
+    state: installed 
+    update_cache: yes
+
+- name: "Install uget"
+  apt: 
+    name: uget
+    state: installed 
