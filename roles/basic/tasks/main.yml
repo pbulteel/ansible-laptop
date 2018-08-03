@@ -1,5 +1,6 @@
-- include: dropbox.yml
 - include: chrome.yml
+- include: dbeaver.yml
+- include: dropbox.yml
 - include: skype.yml
 - include: steam.yml
 - include: oracle.yml
