@@ -12,6 +12,6 @@
 - name: "Install multisystem"
   apt: 
     name: multisystem
-    state: installed 
+    state: present 
     update_cache: yes
 

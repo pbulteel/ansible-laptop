@@ -1,25 +1,25 @@
 - name: "Install ruby"
   apt: 
     name: ruby
-    state: installed 
+    state: present 
     update_cache: yes
 
 - name: "Install ruby-dev"
   apt: 
     name: ruby-dev
-    state: installed 
+    state: present 
     update_cache: yes
 
 - name: "Install rubygems"
   apt: 
     name: rubygems
-    state: installed 
+    state: present 
     update_cache: yes
 
 - name: "Install build-essential"
   apt: 
     name: build-essential
-    state: installed 
+    state: present 
     update_cache: yes
 
 

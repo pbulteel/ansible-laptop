@@ -6,6 +6,6 @@
 - name: "Install keepassxc"
   apt: 
     name: keepassxc
-    state: installed 
+    state: present 
     update_cache: yes
 

@@ -1,146 +1,146 @@
 - name: "Install byobu"
   apt: 
     name: byobu
-    state: installed 
+    state: present 
     update_cache: yes
 
 - name: "Install vim"
   apt: 
     name: vim
-    state: installed 
+    state: present 
 
-- name: "Install shutter"
+- name: "Install flameshot"
   apt: 
-    name: shutter
-    state: installed 
+    name: flameshot
+    state: present 
 
 - name: "Install inkscape"
   apt: 
     name: inkscape
-    state: installed 
+    state: present 
 
 - name: "Install gimp"
   apt: 
     name: gimp
-    state: installed 
+    state: present 
 
 - name: "Install blender"
   apt: 
     name: blender
-    state: installed 
+    state: present 
 
 - name: "Install backintime-gnome"
   apt: 
     name: backintime-gnome
-    state: installed 
+    state: present 
 
 - name: "Install kgpg"
   apt: 
     name: kgpg
-    state: installed 
+    state: present 
 
 - name: "Install hexchat"
   apt: 
     name: hexchat
-    state: installed 
+    state: present 
 
 - name: "Install linssid"
   apt: 
     name: linssid
-    state: installed 
+    state: present 
 
 - name: "Install wireshark"
   apt: 
     name: wireshark
-    state: installed 
+    state: present 
 
 - name: "Install vlc"
   apt: 
     name: vlc
-    state: installed 
+    state: present 
 
 - name: "Install minicom"
   apt: 
     name: minicom
-    state: installed 
+    state: present 
 
 - name: "Install hplip-gui"
   apt: 
     name: hplip
-    state: installed 
+    state: present 
 
 - name: "Install gtk-recordmydesktop"
   apt: 
     name: gtk-recordmydesktop
-    state: installed 
+    state: present 
 
 - name: "Install git"
   apt: 
     name: git
-    state: installed 
+    state: present 
 
 - name: "Install ruby"
   apt: 
     name: ruby
-    state: installed 
+    state: present 
 
 - name: "Install ruby-dev"
   apt: 
     name: ruby-dev
-    state: installed 
+    state: present 
 
 - name: "Install rubygems"
   apt: 
     name: rubygems
-    state: installed 
+    state: present 
 
 - name: "Install build-essential"
   apt: 
     name: build-essential
-    state: installed 
+    state: present 
 
 - name: "Install devscripts"
   apt: 
     name: devscripts
-    state: installed 
+    state: present 
 
 - name: "Install remmina"
   apt: 
     name: remmina
-    state: installed 
+    state: present 
 
 - name: "Install gdebi"
   apt: 
     name: gdebi-core
-    state: installed 
+    state: present 
 
 - name: "Install mssh"
   apt: 
     name: mssh
-    state: installed 
+    state: present 
 
 - name: "Install libproc-queue-perl - for dist"
   apt: 
     name: libproc-queue-perl
-    state: installed 
+    state: present 
 
 - name: "Install ipcalc"
   apt: 
     name: ipcalc
-    state: installed 
+    state: present 
 
 - name: "Install keepnote"
   apt: 
     name: keepnote
-    state: installed 
+    state: present 
 
 - name: "Install nmap"
   apt: 
     name: nmap
-    state: installed 
+    state: present 
 
 - name: "Install ntp"
   apt: 
     name: ntp
-    state: installed 
+    state: present 
 

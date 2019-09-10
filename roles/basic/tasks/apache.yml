@@ -1,25 +1,25 @@
 - name: "Install apache2"
   apt: 
     name: apache2
-    state: installed 
+    state: present 
     update_cache: yes
 
 - name: "Install certbot"
   apt: 
     name: certbot
-    state: installed 
+    state: present 
     update_cache: yes
 
 - name: "Install python-certbot-apache"
   apt: 
     name: python-certbot-apache
-    state: installed 
+    state: present 
     update_cache: yes
 
 - name: "Install openssl"
   apt: 
     name: openssl
-    state: installed 
+    state: present 
     update_cache: yes
 
 - name: "Configure Secure ciphers"
@@ -32,6 +32,6 @@
 - name: "Install openssl"
   apt: 
     name: openssl
-    state: installed 
+    state: present 
     update_cache: yes
 

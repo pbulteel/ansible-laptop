@@ -18,6 +18,6 @@
 - name: "Install steam"
   apt: 
     name: steam
-    state: installed 
+    state: present 
     update_cache: yes
 
