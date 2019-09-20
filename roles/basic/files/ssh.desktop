@@ -1,0 +1,7 @@
+[Desktop Entry]
+Version=1.0
+Name=SSH Launcher
+Exec=bash -c '(URL="%U" HOST=\$(echo \${URL:6} | cut -d ":" -f1) PORT=$(echo \${URL:6} | cut -d ":" -f2); ssh \$HOST -p \$PORT); bash'
+Terminal=true
+Type=Application
+Icon=utilities-terminal
