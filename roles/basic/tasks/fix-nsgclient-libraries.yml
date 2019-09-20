@@ -1,0 +1,11 @@
+---
+- name: Fix the libraries needed by NSGClient vpn client`
+  file: 
+    src: '/tmp/{{ item.src }}'
+    dest: '{{ item.dest }}'
+    state: link
+  with_items:
+    - { src: /home/pbulteel/.steam/ubuntu12_32/steam-runtime/amd64/lib/x86_64-linux-gnu/libssl.so.1.0.0, dest: /opt/Citrix/NSGClient/bin/libssl.so.1.0.0 }
+    - { src: /home/pbulteel/.steam/ubuntu12_32/steam-runtime/amd64/lib/x86_64-linux-gnu/libcrypto.so.1.0.0, dest: /opt/Citrix/NSGClient/bin/libcrypto.so.1.0.0 }
+    - { src: /home/pbulteel/.steam/ubuntu12_32/steam-runtime/amd64/usr/lib/x86_64-linux-gnu/libcurl.so.4, dest: /opt/Citrix/NSGClient/bin/libcurl.so.4 }
+    - { src: /home/pbulteel/.steam/ubuntu12_32/steam-runtime/amd64/usr/lib/x86_64-linux-gnu/librtmp.so.0, dest: /opt/Citrix/NSGClient/bin/librtmp.so.0 }
