@@ -28,7 +28,7 @@
   copy:
     content: | 
       {% for adr in o2wifi_dnsmasq_addresses %}
-      address=/{{ adr.domain }}/{{ adr.ip }}
+      server=/{{ adr.domain }}/{{ adr.ip }}
       {% endfor %} 
     dest: /etc/NetworkManager/dnsmasq.d/o2wifi.conf
     owner: root
@@ -42,7 +42,7 @@
   copy:
     content: | 
       {% for adr in o2_dnsmasq_addresses %}
-      address=/{{ adr.domain }}/{{ adr.ip }}
+      server=/{{ adr.domain }}/{{ adr.ip }}
       {% endfor %} 
     dest: /etc/NetworkManager/dnsmasq.d/o2.conf
     owner: root
@@ -56,7 +56,7 @@
   copy:
     content: | 
       {% for adr in unify_dnsmasq_addresses %}
-      address=/{{ adr.domain }}/{{ adr.ip }}
+      server=/{{ adr.domain }}/{{ adr.ip }}
       {% endfor %} 
     dest: /etc/NetworkManager/dnsmasq.d/unify.conf
     owner: root
@@ -69,7 +69,8 @@
 - name: "Enable dnsmasq base in network manager"
   lineinfile: >
     dest=/etc/NetworkManager/NetworkManager.conf
-    regexp='^dns=dnsmasq'
+    regexp='^[main]'
+    inserverafter='^[main]'
     line='dns=dnsmasq'
     owner=root
     group=root
