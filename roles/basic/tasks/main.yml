@@ -1,3 +1,4 @@
+- include: cifs-utils.yml
 - include: chrome.yml
 - include: dbeaver.yml
 - include: dropbox.yml
