@@ -6,8 +6,8 @@
 - include: oracle.yml
 - include: tilix.yml
 - include: mega.yml
+- include: microsoft.yml
 - include: multisystem.yml
-- include: pidgin.yml
 - include: packages.yml
 - include: fpm.yml
 - include: uget.yml
@@ -21,5 +21,4 @@
   with_items:
   - atom
   - notepad-plus-plus
-  - teams-for-linux
   - keepassxc
