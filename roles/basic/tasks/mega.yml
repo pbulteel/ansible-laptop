@@ -1,11 +1,11 @@
 - name: "Add GnuPG key: MEGA"
   apt_key:
-    keyserver: keyserver.ubuntu.com
-    id: BF8B66E01192CBA2E72201294B4E7A9523ACD201
+    url: https://mega.nz/linux/MEGAsync/xUbuntu_19.04/Release.key
+    state: present
 
 - name: "Add Repo: MEGAsync"
   apt_repository:
-    repo: deb https://mega.nz/linux/MEGAsync/xUbuntu_18.04/ ./
+    repo: deb https://mega.nz/linux/MEGAsync/xUbuntu_19.04/ ./
     state: present
     filename: 'megasync'
 
