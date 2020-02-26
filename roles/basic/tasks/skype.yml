@@ -12,6 +12,6 @@
 - name: "Install skypeforlinux"
   apt: 
     name: skypeforlinux
-    state: installed 
+    state: present 
     update_cache: yes
 

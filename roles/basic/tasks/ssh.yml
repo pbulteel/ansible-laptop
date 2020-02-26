@@ -8,13 +8,16 @@
 
 - name: "Harden ssh: re-generate rsa keys"
   shell: 'ssh-keygen -t rsa -b 4096 -f /etc/ssh/ssh_hosts_rsa_key -N ""'
+  notify: restart ssh
 
 - name: "Harden ssh: generate ed25519 keys"
   shell: 'ssh-keygen -t ed25519 -f /etc/ssh/ssh_host_ed25519_key -N ""'
+  notify: restart ssh
 
 - name: "Harden ssh: Remove small Diffie-Hellman moduli"
-awk '$5 >= 3071' /etc/ssh/moduli > /etc/ssh/moduli.safe
-mv /etc/ssh/moduli.safe /etc/ssh/moduli
+  shell: awk '$5 >= 3071' /etc/ssh/moduli > /etc/ssh/moduli.safe ; 
+         mv /etc/ssh/moduli.safe /etc/ssh/moduli
+  notify: restart ssh
 
 - name: "Harden ssh: Disable the DSA and ECDSA host keys"
   lineinfile:
@@ -22,16 +25,15 @@ mv /etc/ssh/moduli.safe /etc/ssh/moduli
     regexp: '^HostKey /etc/ssh/ssh_host_(dsa\|ecdsa)_key$'
     line: '#HostKey /etc/ssh/ssh_host_\1_key'
     validate: "sshd -f %s -T"
-  notify:
-    - restart ssh
+  notify: restart ssh
 
 - name: "Harden ssh: Restrict supported key exchange, cipher, and MAC algorithms"
   lineinfile:
     path: /etc/ssh/sshd_config
-    "# hardening guide.
+    : echo "# hardening guide.
     KexAlgorithms curve25519-sha256@libssh.org,diffie-hellman-group-exchange-sha256
     Ciphers chacha20-poly1305@openssh.com,aes256-gcm@openssh.com,aes128-gcm@openssh.com,aes256-ctr,aes192-ctr,aes128-ctr
-    MACs hmac-sha2-256-etm@openssh.com,hmac-sha2-512-etm@openssh.com,umac-128-etm@openssh.com"
+    MACs hmac-sha2-256-etm@openssh.com,hmac-sha2-512-etm@openssh.com,umac-128-etm@openssh.com" 
     mode: '0600'
     owner: 0
     group: 0

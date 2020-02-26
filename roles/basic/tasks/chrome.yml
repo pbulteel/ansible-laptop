@@ -12,6 +12,6 @@
 - name: "Install google-chrome-stable"
   apt: 
     name: google-chrome-stable
-    state: installed 
+    state: present 
     update_cache: yes
 

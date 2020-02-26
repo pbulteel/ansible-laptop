@@ -7,6 +7,6 @@
 - name: "Install tilix"
   apt: 
     name: tilix
-    state: installed 
+    state: present 
     update_cache: yes
 

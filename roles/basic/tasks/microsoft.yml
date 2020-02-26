@@ -18,12 +18,12 @@
 - name: "Install vscode"
   apt: 
     name: vscode
-    state: installed 
+    state: present 
     update_cache: yes
 
 - name: "Install teams"
   apt: 
     name: teams
-    state: installed 
+    state: present 
     update_cache: yes
 

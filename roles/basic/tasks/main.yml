@@ -16,7 +16,7 @@
 - include: vpn.yml
 - include: zoom.yml
 
-- include: ssh.yml
+#- include: ssh.yml
 
 - name: "Install packages that are installed via snap"
   command: snap install {{ item }} --classic

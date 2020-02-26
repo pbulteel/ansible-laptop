@@ -1,13 +1,13 @@
 - name: "Install pidgin"
   apt: 
     name: pidgin
-    state: installed 
+    state: present
     update_cache: yes
 
 - name: "Install pidgin-sipe"
   apt: 
     name: pidgin-sipe
-    state: installed 
+    state: present 
     update_cache: yes
 
 - name: "Add ENV Variable to pidgin shell script"

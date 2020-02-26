@@ -7,10 +7,10 @@
 - name: "Install uget integrator"
   apt: 
     name: uget-integrator
-    state: installed 
+    state: present 
     update_cache: yes
 
 - name: "Install uget"
   apt: 
     name: uget
-    state: installed 
+    state: present 

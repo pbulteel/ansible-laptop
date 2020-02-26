@@ -12,6 +12,6 @@
 - name: "Install megasync"
   apt: 
     name: megasync
-    state: installed 
+    state: present 
     update_cache: yes
 
