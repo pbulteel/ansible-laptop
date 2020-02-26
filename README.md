@@ -7,7 +7,8 @@ This is just my ansible playbook to setup my laptop with the applications that I
   * Oracle Java (webupd8team)
   * Tilix (webupd8team)
   * MEGA
-  * TelRed (sky  * lync client)
+  * Lutris
+  * Microsoft (Teams and vscode)
   * keepassxc
 - Software installed
   * byobu
@@ -30,7 +31,7 @@ This is just my ansible playbook to setup my laptop with the applications that I
   * oracle-java8-installer
   * tilix
   * skypeforlinux
-  * sky 
+  * lutris
   * git
   * ruby
   * ruby-dev
@@ -44,3 +45,5 @@ This is just my ansible playbook to setup my laptop with the applications that I
   * gdebi-core
   * mssh
   * libproc-queue-perl
+  * teams
+  * vscode

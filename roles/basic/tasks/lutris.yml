@@ -1,0 +1,12 @@
+
+- name: "Add Repo: Lutris"
+  apt_repository: 
+    repo: ppa:lutris-team/lutris
+    state: present
+
+- name: "Install lutris"
+  apt: 
+    name: lutris
+    state: present 
+    update_cache: yes
+

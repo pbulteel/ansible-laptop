@@ -6,6 +6,7 @@
 - include: steam.yml
 - include: oracle.yml
 - include: tilix.yml
+- include: lutris.yml
 - include: mega.yml
 - include: microsoft.yml
 - include: multisystem.yml
