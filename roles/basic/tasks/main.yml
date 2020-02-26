@@ -4,7 +4,6 @@
 - include: dropbox.yml
 - include: skype.yml
 - include: steam.yml
-- include: oracle.yml
 - include: tilix.yml
 - include: lutris.yml
 - include: mega.yml
