@@ -1,0 +1,17 @@
+- name: "Add GnuPG key - Jitsi."
+  apt_key:
+    url: https://download.jitsi.org/jitsi-key.gpg.key
+    state: present
+
+- name: "Add Repo: Jitsi"
+  apt_repository:
+    repo: deb https://download.jitsi.org stable/
+    state: present
+    filename: 'jitsi'
+
+- name: "Install jitsi"
+  apt: 
+    name: jitsi
+    state: present 
+    update_cache: yes
+

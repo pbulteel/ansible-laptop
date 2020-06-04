@@ -1,0 +1,13 @@
+- name: "Install packages that are installed via snap"
+  command: snap install {{ item }} --classic
+  with_items:
+  - atom
+  - notepad-plus-plus
+  - keepassxc
+  - 0ad
+  - gifcurry
+  - natron
+  - p3x-onenote
+  - postman
+  - slack
+  - walc
