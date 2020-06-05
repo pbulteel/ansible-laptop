@@ -2,24 +2,18 @@
 - include: chrome.yml
 - include: dbeaver.yml
 - include: dropbox.yml
-- include: skype.yml
-- include: steam.yml
-- include: tilix.yml
+- include: fpm.yml
 - include: lutris.yml
 - include: mega.yml
 - include: microsoft.yml
 - include: multisystem.yml
 - include: packages.yml
-- include: fpm.yml
+- include: skype.yml
+- include: steam.yml
+- include: tilix.yml
 - include: uget.yml
 - include: vpn.yml
 - include: zoom.yml
 
 #- include: ssh.yml
-
-- name: "Install packages that are installed via snap"
-  command: snap install {{ item }} --classic
-  with_items:
-  - atom
-  - notepad-plus-plus
-  - keepassxc
+- include: snaps.yml
