@@ -1,17 +1,20 @@
 - name: "Add GnuPG key: MEGA"
   apt_key:
-    url: https://mega.nz/linux/MEGAsync/xUbuntu_19.04/Release.key
+    url: https://mega.nz/linux/MEGAsync/xUbuntu_20.04/Release.key
     state: present
+  ignore_errors: yes
 
 - name: "Add Repo: MEGAsync"
   apt_repository:
-    repo: deb https://mega.nz/linux/MEGAsync/xUbuntu_19.04/ ./
+    repo: deb https://mega.nz/linux/MEGAsync/xUbuntu_20.04/ ./
     state: present
     filename: 'megasync'
+  ignore_errors: yes
 
 - name: "Install megasync"
   apt: 
     name: megasync
     state: present 
     update_cache: yes
+  ignore_errors: yes
 

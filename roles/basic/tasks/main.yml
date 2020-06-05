@@ -1,3 +1,4 @@
+- include: apache.yml
 - include: cifs-utils.yml
 - include: chrome.yml
 - include: dbeaver.yml
@@ -11,10 +12,11 @@
 - include: packages.yml
 - include: skype.yml
 - include: steam.yml
-- include: tilix.yml
+  #- include: tilix.yml
 - include: uget.yml
 - include: vpn.yml
 - include: zoom.yml
+
 
 #- include: ssh.yml
 - include: snaps.yml

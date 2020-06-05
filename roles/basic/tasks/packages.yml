@@ -29,9 +29,9 @@
     name: blender
     state: present 
 
-- name: "Install backintime-gnome"
+- name: "Install backintime-qt"
   apt: 
-    name: backintime-gnome
+    name: backintime-qt
     state: present 
 
 - name: "Install kgpg"
@@ -69,10 +69,10 @@
     name: hplip
     state: present 
 
-- name: "Install gtk-recordmydesktop"
-  apt: 
-    name: gtk-recordmydesktop
-    state: present 
+    #- name: "Install gtk-recordmydesktop"
+    #apt: 
+    #name: gtk-recordmydesktop
+    #state: present 
 
 - name: "Install git"
   apt: 
@@ -129,9 +129,9 @@
     name: ipcalc
     state: present 
 
-- name: "Install keepnote"
+- name: "Install htop"
   apt: 
-    name: keepnote
+    name: htop
     state: present 
 
 - name: "Install nmap"
@@ -142,5 +142,15 @@
 - name: "Install ntp"
   apt: 
     name: ntp
+    state: present 
+
+- name: "Install iftop"
+  apt: 
+    name: iftop
+    state: present 
+
+- name: "Install nextcloud-desktop"
+  apt: 
+    name: nextcloud-desktop
     state: present 
 

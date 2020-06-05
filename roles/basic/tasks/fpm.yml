@@ -24,4 +24,4 @@
 
 
 - name: "Install fpm"
-  command: gem install --no-ri --no-rdoc fpm
+  command: gem install --no-document  fpm

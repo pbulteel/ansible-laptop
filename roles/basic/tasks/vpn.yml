@@ -70,7 +70,7 @@
   lineinfile: >
     dest=/etc/NetworkManager/NetworkManager.conf
     regexp='^[main]'
-    inserverafter='^[main]'
+    insertafter='^[main]'
     line='dns=dnsmasq'
     owner=root
     group=root

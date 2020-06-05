@@ -1,6 +1,6 @@
 - name: "Add GnuPG key: Steam."
   apt_key:
-    url: http://repo.steampowered.com/steam/signature.gpg
+    url: https://repo.steampowered.com/steam/archive/precise/steam.gpg
     state: present
 
 - name: "Add Repo: Steam"
