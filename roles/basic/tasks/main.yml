@@ -3,6 +3,7 @@
 - include: dbeaver.yml
 - include: dropbox.yml
 - include: fpm.yml
+- include: jitsi.yml
 - include: lutris.yml
 - include: mega.yml
 - include: microsoft.yml
