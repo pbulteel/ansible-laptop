@@ -1,13 +1,22 @@
 - name: "Install packages that are installed via snap"
   command: snap install {{ item }} --classic
   with_items:
-  - atom
-  - notepad-plus-plus
-  - keepassxc
   - 0ad
+  - atom
+  - bashtop
+  - bpytop
   - gifcurry
+  - keepassxc
+  - kruler
+  - kubectl
   - natron
   - p3x-onenote
+  - picard
   - postman
+  - powershell
+  - shutter
   - slack
+  - sweethome3d-homedesign
+  - vokoscreen-ng
   - walc
+  - zaproxy

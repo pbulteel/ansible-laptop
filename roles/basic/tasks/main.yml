@@ -1,22 +1,32 @@
+- name: Update and upgrade everything first
+  package:
+    name: '*'
+    state: latest
+
+- include: packages.yml
+- include: snaps.yml
+
 - include: apache.yml
 - include: cifs-utils.yml
 - include: chrome.yml
 - include: dbeaver.yml
 - include: dropbox.yml
+#- include: duckietv.yml
 - include: fpm.yml
+#- include: freedownloadmanager.yml
 - include: jitsi.yml
 - include: lutris.yml
 - include: mega.yml
 - include: microsoft.yml
 - include: multisystem.yml
-- include: packages.yml
+- include: openfortivpn.yml
+- include: openwebstart.yml
+- include: rclone.yml
 - include: skype.yml
 - include: steam.yml
-  #- include: tilix.yml
 - include: uget.yml
 - include: vpn.yml
 - include: zoom.yml
 
 
 #- include: ssh.yml
-- include: snaps.yml

@@ -7,7 +7,7 @@
   apt_repository:
     repo: deb https://download.jitsi.org stable/
     state: present
-    filename: 'jitsi'
+    filename: 'jitsi-stable'
 
 - name: "Install jitsi"
   apt: 

@@ -154,3 +154,7 @@
     name: nextcloud-desktop
     state: present 
 
+- name: "Install debhelper"
+  apt: 
+    name: debhelper
+    state: present 

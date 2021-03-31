@@ -1,16 +1,13 @@
 o2wifi_dnsmasq_addresses:
   -
-    domain: man.o2wifi.co.uk
+    domain: o2wifi.co.uk
     ip: 172.16.9.2
   - 
-    domain: man.o2wifi.co.uk
-    ip: 172.16.9.3
-  -
     domain: mer.o2wifi.co.uk
     ip: 172.16.5.2
   - 
-    domain: mer.o2wifi.co.uk
-    ip: 172.16.5.3
+    domain: wifi.uk.pri.o2.com
+    ip: 172.24.0.97
 
 o2_dnsmasq_addresses:
   -
@@ -24,3 +21,6 @@ unify_dnsmasq_addresses:
   - 
     domain: unify.local
     ip: 172.31.144.35
+  -
+    domain: vdc-uk.mgt
+    ip: 10.233.6.237
