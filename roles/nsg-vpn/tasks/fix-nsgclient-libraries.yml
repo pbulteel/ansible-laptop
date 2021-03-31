@@ -1,0 +1,19 @@
+---
+- name: Install missing dependencies
+  apt: 
+    deb: http://security.ubuntu.com/ubuntu/pool/main/n/network-manager/libnm-util2_1.10.6-2ubuntu1.1_amd64.deb
+  apt:
+    deb: http://security.ubuntu.com/ubuntu/pool/main/n/network-manager/libnm-glib4_1.10.6-2ubuntu1.1_amd64.deb
+- name: Fix the libraries needed by NSGClient vpn client`
+  file: 
+    src: '{{ item.src }}'
+    dest: '{{ item.dest }}'
+    state: link
+    owner: root
+  with_items:
+    - { src: /home/pbulteel/.local/share/Steam/ubuntu12_32/steam-runtime/lib/x86_64-linux-gnu/libssl.so.1.0.0, dest: /opt/Citrix/NSGClient/bin/libssl.so.1.0.0 }
+    - { src: /home/pbulteel/.local/share/Steam/ubuntu12_32/steam-runtime/lib/x86_64-linux-gnu/libcrypto.so.1.0.0, dest: /opt/Citrix/NSGClient/bin/libcrypto.so.1.0.0 }
+    - { src: /home/pbulteel/.local/share/Steam/ubuntu12_32/steam-runtime/usr/lib/x86_64-linux-gnu/libcurl.so.4, dest: /opt/Citrix/NSGClient/bin/libcurl.so.4 }
+    - { src: /home/pbulteel/.local/share/Steam/ubuntu12_32/steam-runtime/usr/lib/x86_64-linux-gnu/librtmp.so.0, dest: /opt/Citrix/NSGClient/bin/librtmp.so.0 }
+    - { src: /home/pbulteel/.local/share/Steam/ubuntu12_32/steam-runtime/usr/lib/x86_64-linux-gnu/libhogweed.so.4, dest: /opt/Citrix/NSGClient/bin/libhogweed.so.4 }
+    - { src: /home/pbulteel/.local/share/Steam/ubuntu12_32/steam-runtime/usr/lib/x86_64-linux-gnu/libnettle.so.6, dest: /opt/Citrix/NSGClient/bin/libnettle.so.6 }

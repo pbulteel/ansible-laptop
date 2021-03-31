@@ -1,0 +1,12 @@
+- name: Resize the vpn images
+  command: 
+    cmd: cp /opt/Citrix/NSGClient/resx/images/*.png /opt/Citrix/NSGClient/resx/images/*.ico /opt/Citrix/NSGClient/resx/images/backup_images/
+    creates: /opt/Citrix/NSGClient/resx/images/backup_images
+  command: convert /opt/Citrix/NSGClient/resx/images/backup_images/icon_disconnected.ico -resize 25x25 /opt/Citrix/NSGClient/resx/images/icon_disconnected.ico 
+  command: convert /opt/Citrix/NSGClient/resx/images/backup_images/icon_vpn2.ico -resize 25x25 /opt/Citrix/NSGClient/resx/images/icon_vpn2.ico 
+  command: convert /opt/Citrix/NSGClient/resx/images/backup_images/icon_vpn.ico -resize 25x25 /opt/Citrix/NSGClient/resx/images/icon_vpn.ico 
+  command: convert /opt/Citrix/NSGClient/resx/images/backup_images/icon_warn1.ico -resize 25x25 /opt/Citrix/NSGClient/resx/images/icon_warn1.ico
+  command: convert /opt/Citrix/NSGClient/resx/images/backup_images/auth_head.png -resize 25x25 /opt/Citrix/NSGClient/resx/images/auth_head.png
+  command: convert /opt/Citrix/NSGClient/resx/images/backup_images/citrix6.png -resize 25x25 /opt/Citrix/NSGClient/resx/images/citrix6.png
+  command: convert /opt/Citrix/NSGClient/resx/images/backup_images/citrix.png -resize 25x25 /opt/Citrix/NSGClient/resx/images/citrix.png
+  command: convert /opt/Citrix/NSGClient/resx/images/backup_images/NetScaler_Gateway.png -resize 25x25 /opt/Citrix/NSGClient/resx/images/NetScaler_Gateway.png
