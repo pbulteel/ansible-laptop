@@ -1,0 +1,5 @@
+- name: "Install FreeDownloadManager."
+  apt:
+    deb: https://dn3.freedownloadmanager.org/6/latest/freedownloadmanager.deb
+  ignore_errors: yes
+

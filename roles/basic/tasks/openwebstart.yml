@@ -1,0 +1,4 @@
+- name: "Install openwebstart because we still need it."
+  apt:
+    deb: https://github.com/karakun/OpenWebStart/releases/download/v1.1.8/OpenWebStart_linux_1_1_8.deb
+
