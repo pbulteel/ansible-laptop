@@ -3,9 +3,6 @@ o2wifi_dnsmasq_addresses:
     domain: o2wifi.co.uk
     ip: 172.16.9.2
   - 
-    domain: mer.o2wifi.co.uk
-    ip: 172.16.5.2
-  - 
     domain: wifi.uk.pri.o2.com
     ip: 172.24.0.97
 

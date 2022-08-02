@@ -14,16 +14,16 @@
 #- include: duckietv.yml
 - include: fpm.yml
 #- include: freedownloadmanager.yml
-- include: jitsi.yml
-- include: lutris.yml
+#- include: jitsi.yml
+#- include: lutris.yml
 - include: mega.yml
-- include: microsoft.yml
+  #- include: microsoft.yml
 - include: multisystem.yml
 - include: openfortivpn.yml
 - include: openwebstart.yml
 - include: rclone.yml
 - include: skype.yml
-- include: steam.yml
+  #- include: steam.yml
 - include: uget.yml
 - include: vpn.yml
 - include: zoom.yml
