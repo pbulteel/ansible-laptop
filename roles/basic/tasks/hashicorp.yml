@@ -7,7 +7,7 @@
   apt_repository:
     repo: deb [arch=amd64] https://apt.releases.hashicorp.com jammy main
     state: present
-    filename: 'hashicorp.list'
+    filename: 'hashicorp'
 
 - name: "Install packer"
   apt: 
