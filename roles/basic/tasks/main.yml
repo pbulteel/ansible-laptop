@@ -5,6 +5,7 @@
 
 - include: packages.yml
 - include: snaps.yml
+- include: flatpack.yml
 
 - include: apache.yml
 - include: cifs-utils.yml
