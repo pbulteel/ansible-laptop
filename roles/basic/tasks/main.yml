@@ -15,6 +15,7 @@
 #- include: duckietv.yml
 - include: fpm.yml
 #- include: freedownloadmanager.yml
+- include: hashicorp.yml
 #- include: jitsi.yml
 #- include: lutris.yml
 - include: mega.yml
