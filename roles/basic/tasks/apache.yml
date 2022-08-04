@@ -3,12 +3,14 @@
     name: apache2
     state: present 
     update_cache: yes
+  become: true
 
 - name: "Install certbot"
   apt: 
     name: certbot
     state: present 
     update_cache: yes
+  become: true
 
 #- name: "Install python-certbot-apache"
   #apt: 
@@ -21,6 +23,7 @@
     name: openssl
     state: present 
     update_cache: yes
+  become: true
 
 #- name: "Configure Secure ciphers"
   #lineinfile: 

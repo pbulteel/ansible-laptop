@@ -2,10 +2,12 @@
   apt_repository: 
     repo: ppa:phoerious/keepassxc
     state: present
+  become: true
 
 - name: "Install keepassxc"
   apt: 
     name: keepassxc
     state: present 
     update_cache: yes
+  become: true
 

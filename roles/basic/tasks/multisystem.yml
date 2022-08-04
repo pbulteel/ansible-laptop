@@ -2,16 +2,19 @@
   apt_key:
     url: http://liveusb.info/multisystem/depot/multisystem.asc
     state: present
+  become: true
 
 - name: "Add Repo: Multisystem"
   apt_repository:
     repo: deb http://liveusb.info/multisystem/depot all main
     state: present
     filename: 'multisystem'
+  become: true
 
 - name: "Install multisystem"
   apt: 
     name: multisystem
     state: present 
     update_cache: yes
+  become: true
 

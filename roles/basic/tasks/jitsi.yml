@@ -2,16 +2,19 @@
   apt_key:
     url: https://download.jitsi.org/jitsi-key.gpg.key
     state: present
+  become: true
 
 - name: "Add Repo: Jitsi"
   apt_repository:
     repo: deb https://download.jitsi.org stable/
     state: present
     filename: 'jitsi-stable'
+  become: true
 
 - name: "Install jitsi"
   apt: 
     name: jitsi
     state: present 
     update_cache: yes
+  become: true
 

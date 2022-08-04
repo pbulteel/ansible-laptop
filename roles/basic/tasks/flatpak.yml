@@ -1,0 +1,20 @@
+- name: "Install packages that are installed via flatpack"
+  community.general.flatpak: 
+    name:
+      - com.calibre_ebook.calibre
+      - io.dbeaver.DBeaverCommunity
+      - io.github.mimbrero.WhatsAppDesktop
+      - org.audacityteam.Audacity
+      - org.clementine_player.Clementine
+      - tv.kodi.Kodi
+      - com.play0ad.zeroad
+      - io.atom.Atom
+      - org.keepassxc.KeePassXC
+      - org.kde.kruler
+      - fr.natron.Natron
+      - org.musicbrainz.Picard
+      - com.getpostman.Postman
+      - com.sweethome3d.Sweethome3d
+      - com.github.vkohaupt.vokoscreenNG
+    state: present
+    method: user

@@ -3,10 +3,12 @@
     repo: ppa:webupd8team/terminix
     state: present
     filename: 'webupd8team-ubuntu-terminix'
+  become: true
 
 - name: "Install tilix"
   apt: 
     name: tilix
     state: present 
     update_cache: yes
+  become: true
 

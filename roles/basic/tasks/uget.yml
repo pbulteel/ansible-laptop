@@ -3,14 +3,17 @@
     repo: ppa:uget-team/ppa
     state: present
     filename: 'uget-integrator'
+  become: true
 
 - name: "Install uget integrator"
   apt: 
     name: uget-integrator
     state: present 
     update_cache: yes
+  become: true
 
 - name: "Install uget"
   apt: 
     name: uget
     state: present 
+  become: true

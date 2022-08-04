@@ -3,18 +3,21 @@
     url: https://mega.nz/linux/MEGAsync/xUbuntu_21.10/Release.key
     state: present
   ignore_errors: yes
+  become: true
 
 - name: "Add Repo: MEGAsync"
   apt_repository:
-    repo: deb https://mega.nz/linux/MEGAsync/xUbuntu_21.10/ ./
+    repo: deb https://mega.nz/linux/MEGAsync/xUbuntu_22.04/ ./
     state: present
     filename: 'megasync'
   ignore_errors: yes
+  become: true
 
 - name: "Install megasync"
   apt: 
-    name: megasync
+    url: https://mega.nz/linux/repo/xUbuntu_22.04/amd64/megasync-xUbuntu_22.04_amd64.deb
     state: present 
     update_cache: yes
   ignore_errors: yes
+  become: true
 

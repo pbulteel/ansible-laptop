@@ -3,25 +3,30 @@
     name: ruby
     state: present 
     update_cache: yes
+  become: true
 
 - name: "Install ruby-dev"
   apt: 
     name: ruby-dev
     state: present 
     update_cache: yes
+  become: true
 
 - name: "Install rubygems"
   apt: 
     name: rubygems
     state: present 
     update_cache: yes
+  become: true
 
 - name: "Install build-essential"
   apt: 
     name: build-essential
     state: present 
     update_cache: yes
+  become: true
 
 
 - name: "Install fpm"
   command: gem install --no-document  fpm
+  become: true

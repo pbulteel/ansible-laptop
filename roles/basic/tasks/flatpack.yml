@@ -1,9 +1,0 @@
-- name: "Install packages that are installed via flatpack"
-  command: flatpack install {{ item }} 
-  with_items:
-  - calibre
-  - DBeaver Community
-  - WhatsAppQT
-  - Audacity
-  - Clementine Music Player
-  - kodi

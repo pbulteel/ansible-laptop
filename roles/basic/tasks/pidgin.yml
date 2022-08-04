@@ -3,12 +3,14 @@
     name: pidgin
     state: present
     update_cache: yes
+  become: true
 
 - name: "Install pidgin-sipe"
   apt: 
     name: pidgin-sipe
     state: present 
     update_cache: yes
+  become: true
 
 - name: "Add ENV Variable to pidgin shell script"
   lineinfile:
@@ -16,3 +18,4 @@
     regexp: '^/usr/bin/pidgin.orig \$\*'
     line: 'NSS_SSL_CBC_RANDOM_IV=0 /usr/bin/pidgin.orig $*'
     backrefs: yes
+  become: true

@@ -2,16 +2,19 @@
   apt_key:
     url: https://repo.skype.com/data/SKYPE-GPG-KEY
     state: present
+  become: true
 
 - name: "Add Repo: Skype"
   apt_repository:
     repo: deb [arch=amd64] https://repo.skype.com/deb stable main
     state: present
     filename: 'skype-stable'
+  become: true
 
 - name: "Install skypeforlinux"
   apt: 
     name: skypeforlinux
     state: present 
     update_cache: yes
+  become: true
 

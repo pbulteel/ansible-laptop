@@ -10,3 +10,4 @@
     - { src: /home/pbulteel/.steam/ubuntu12_32/steam-runtime/amd64/lib/x86_64-linux-gnu/libcrypto.so.1.0.0, dest: /opt/Citrix/NSGClient/bin/libcrypto.so.1.0.0 }
     - { src: /home/pbulteel/.steam/ubuntu12_32/steam-runtime/amd64/usr/lib/x86_64-linux-gnu/libcurl.so.4, dest: /opt/Citrix/NSGClient/bin/libcurl.so.4 }
     - { src: /home/pbulteel/.steam/ubuntu12_32/steam-runtime/amd64/usr/lib/x86_64-linux-gnu/librtmp.so.0, dest: /opt/Citrix/NSGClient/bin/librtmp.so.0 }
+  become: true

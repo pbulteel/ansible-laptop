@@ -2,3 +2,4 @@
   apt:
     name: virtualbox
     state: present
+  become: true

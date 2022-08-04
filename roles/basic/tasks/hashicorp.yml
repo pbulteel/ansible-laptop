@@ -2,25 +2,30 @@
   apt_key:
     url: https://apt.releases.hashicorp.com/gpg
     state: present
+  become: true
 
 - name: "Add Repo: Hashicorp"
   apt_repository:
     repo: deb [arch=amd64] https://apt.releases.hashicorp.com jammy main
     state: present
     filename: 'hashicorp'
+  become: true
 
 - name: "Install packer"
   apt: 
     name: packer
     state: present 
     update_cache: yes
+  become: true
 
 - name: "Install terraform"
   apt: 
     name: terraform
     state: present 
+  become: true
 
 - name: "Install vault"
   apt: 
     name: vault
     state: present 
+  become: true

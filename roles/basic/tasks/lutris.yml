@@ -3,10 +3,12 @@
   apt_repository: 
     repo: ppa:lutris-team/lutris
     state: present
+  become: true
 
 - name: "Install lutris"
   apt: 
     name: lutris
     state: present 
     update_cache: yes
+  become: true
 

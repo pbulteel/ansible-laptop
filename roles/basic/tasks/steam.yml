@@ -2,18 +2,21 @@
   apt_key:
     url: https://repo.steampowered.com/steam/archive/stable/steam.gpg
     state: present
+  become: true
 
 - name: "Add Repo: Steam"
   apt_repository:
     repo: deb [arch=amd64,i386] http://repo.steampowered.com/steam/ stable steam
     state: present
     filename: 'steam'
+  become: true
 
 - name: "Add Repo: Steam src"
   apt_repository:
     repo: deb-src [arch=amd64,i386] http://repo.steampowered.com/steam/ stable steam
     state: present
     filename: 'steam'
+  become: true
 
 - name: "Install steam"
   package: 
@@ -25,5 +28,6 @@
      - steam-launcher
     state: present 
     update_cache: yes
+  become: true
     
 

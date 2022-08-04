@@ -2,10 +2,12 @@
   apt_key:
     url: https://zoom.us/linux/download/pubkey
     state: present
+  become: true
 
 - name: "Install zoom"
   apt: 
     deb: https://zoom.us/client/latest/zoom_amd64.deb
     state: present 
     update_cache: yes
+  become: true
 

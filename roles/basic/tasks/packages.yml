@@ -3,158 +3,190 @@
     name: byobu
     state: present 
     update_cache: yes
+  become: true
 
 - name: "Install vim"
   apt: 
     name: vim
     state: present 
+  become: true
 
 - name: "Install flameshot"
   apt: 
     name: flameshot
     state: present 
+  become: true
 
 - name: "Install inkscape"
   apt: 
     name: inkscape
     state: present 
+  become: true
 
 - name: "Install gimp"
   apt: 
     name: gimp
     state: present 
+  become: true
 
 - name: "Install blender"
   apt: 
     name: blender
     state: present 
+  become: true
 
 - name: "Install backintime-qt"
   apt: 
     name: backintime-qt
     state: present 
+  become: true
 
 - name: "Install kgpg"
   apt: 
     name: kgpg
     state: present 
+  become: true
 
 - name: "Install hexchat"
   apt: 
     name: hexchat
     state: present 
+  become: true
 
 - name: "Install linssid"
   apt: 
     name: linssid
     state: present 
+  become: true
 
 - name: "Install wireshark"
   apt: 
     name: wireshark
     state: present 
+  become: true
 
 - name: "Install vlc"
   apt: 
     name: vlc
     state: present 
+  become: true
 
 - name: "Install minicom"
   apt: 
     name: minicom
     state: present 
+  become: true
 
 - name: "Install hplip-gui"
   apt: 
     name: hplip
     state: present 
+  become: true
 
     #- name: "Install gtk-recordmydesktop"
     #apt: 
     #name: gtk-recordmydesktop
     #state: present 
+    #become: true
 
 - name: "Install git"
   apt: 
     name: git
     state: present 
+  become: true
 
 - name: "Install ruby"
   apt: 
     name: ruby
     state: present 
+  become: true
 
 - name: "Install ruby-dev"
   apt: 
     name: ruby-dev
     state: present 
+  become: true
 
 - name: "Install rubygems"
   apt: 
     name: rubygems
     state: present 
+  become: true
 
 - name: "Install build-essential"
   apt: 
     name: build-essential
     state: present 
+  become: true
 
 - name: "Install devscripts"
   apt: 
     name: devscripts
     state: present 
+  become: true
 
 - name: "Install remmina"
   apt: 
     name: remmina
     state: present 
+  become: true
 
 - name: "Install gdebi"
   apt: 
     name: gdebi-core
     state: present 
+  become: true
 
 - name: "Install mssh"
   apt: 
     name: mssh
     state: present 
+  become: true
 
 - name: "Install libproc-queue-perl - for dist"
   apt: 
     name: libproc-queue-perl
     state: present 
+  become: true
 
 - name: "Install ipcalc"
   apt: 
     name: ipcalc
     state: present 
+  become: true
 
 - name: "Install htop"
   apt: 
     name: htop
     state: present 
+  become: true
 
 - name: "Install nmap"
   apt: 
     name: nmap
     state: present 
+  become: true
 
 - name: "Install ntp"
   apt: 
     name: ntp
     state: present 
+  become: true
 
 - name: "Install iftop"
   apt: 
     name: iftop
     state: present 
+  become: true
 
 - name: "Install nextcloud-desktop"
   apt: 
     name: nextcloud-desktop
     state: present 
+  become: true
 
 - name: "Install debhelper"
   apt: 
     name: debhelper
     state: present 
+  become: true

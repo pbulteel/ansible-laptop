@@ -2,16 +2,19 @@
   apt_key:
     keyserver: keyserver.ubuntu.com
     id: 2FAB19E7CCB7F415
+  become: true
 
 - name: "Add Repo: openfortivpn"
   apt_repository:
     repo: deb https://apt.iteas.at/iteas focal main
     state: present
     filename: 'openfortivpn'
+  become: true
 
 - name: "Install openfortivpn"
   apt: 
     name: openfortigui
     state: present 
     update_cache: yes
+  become: true
 

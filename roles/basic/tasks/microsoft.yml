@@ -2,28 +2,33 @@
   apt_key:
     url: https://packages.microsoft.com/keys/microsoft.asc
     state: present
+  become: true
 
 - name: "Add Repo: VSCode"
   apt_repository:
     repo: deb [arch=amd64] http://packages.microsoft.com/repos/vscode stable main
     state: present
     filename: 'vscode'
+  become: true
 
 - name: "Add Repo: Teams"
   apt_repository:
     repo: deb [arch=amd64] http://packages.microsoft.com/repos/ms-teams stable main
     state: present
     filename: 'teams'
+  become: true
 
 - name: "Install vscode (code)"
   apt: 
     name: code
     state: present 
     update_cache: yes
+  become: true
 
 - name: "Install teams"
   apt: 
     name: teams
     state: present 
     update_cache: yes
+  become: true
 

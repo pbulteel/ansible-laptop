@@ -2,16 +2,19 @@
   apt_key:
     url: https://dl.google.com/linux/linux_signing_key.pub
     state: present
+  become: true
 
 - name: "Add Repo: Chrome"
   apt_repository:
     repo: deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main
     state: present
     filename: 'google-chrome'
+  become: true
 
 - name: "Install google-chrome-stable"
   apt: 
     name: google-chrome-stable
     state: present 
     update_cache: yes
+  become: true
 
