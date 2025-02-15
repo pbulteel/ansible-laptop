@@ -11,6 +11,8 @@
         repo: "deb [arch=amd64 signed-by=/usr/share/keyrings/iteas-keyring.gpg] https://apt.iteas.at/iteas {{ ansible_distribution_release }} main"
         state: present
   become: true
+  tags:
+    - openfortivpn
 
 - name: "Install openfortivpn"
   apt: 
@@ -18,4 +20,6 @@
     state: present 
     update_cache: yes
   become: true
+  tags:
+    - openfortivpn  
 
