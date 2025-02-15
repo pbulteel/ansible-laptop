@@ -62,10 +62,6 @@
   tags:
     - basic
     - microsoft
-- include_tasks: multisystem.yml
-  tags:
-    - basic
-    - multisystem
 - include_tasks: openfortivpn.yml
   tags:
     - basic
