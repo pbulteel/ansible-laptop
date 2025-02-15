@@ -1,18 +1,18 @@
-- name: "Add GnuPG key: MEGA"
-  tags:
-    - mega
-    - mega-keys
-  block:
-    - name: mega | no apt key
-      ansible.builtin.get_url:
-        url: https://mega.nz/linux/repo/xUbuntu_24.10/Release.gpg
-        dest: /usr/share/keyrings/meganz-archive-keyring.gpg
-
-    - name: mega | apt source
-      ansible.builtin.apt_repository:
-        repo: "deb [signed-by=/usr/share/keyrings/meganz-archive-keyring.gpg] https://mega.nz/linux/repo/xUbuntu_24.10/ ./"
-        state: present
-  become: true
+#- name: "Add GnuPG key: MEGA"
+  #tags:
+    #- mega
+    #- mega-keys
+  #block:
+    #- name: mega | no apt key
+      #ansible.builtin.get_url:
+        #url: https://mega.nz/linux/repo/xUbuntu_24.10/Release.gpg
+        #dest: /usr/share/keyrings/meganz-archive-keyring.gpg
+#
+    #- name: mega | apt source
+      #ansible.builtin.apt_repository:
+        #repo: "deb [signed-by=/usr/share/keyrings/meganz-archive-keyring.gpg] https://mega.nz/linux/repo/xUbuntu_24.10/ ./"
+        #state: present
+  #become: true
 
 - name: "Install megasync"
   apt: 
