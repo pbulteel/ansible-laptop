@@ -42,6 +42,10 @@
   # tags:
   #   - basic
   #   - freedownloadmanager
+- include_tasks: ghostty.yml
+  tags:
+    - basic
+    - ghostty
 - include_tasks: hashicorp.yml
   tags:
     - basic
