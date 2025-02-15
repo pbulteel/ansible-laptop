@@ -6,9 +6,7 @@
       - io.github.mimbrero.WhatsAppDesktop
       - org.audacityteam.Audacity
       - org.clementine_player.Clementine
-      - tv.kodi.Kodi
       - com.play0ad.zeroad
-      - io.atom.Atom
       - org.keepassxc.KeePassXC
       - org.kde.kruler
       - fr.natron.Natron
@@ -16,6 +14,12 @@
       - com.getpostman.Postman
       - com.sweethome3d.Sweethome3d
       - com.github.vkohaupt.vokoscreenNG
+      - com.logseq.Logseq
+      - com.jgraph.drawio.desktop 
+      - com.spotify.Client
+      - org.audacityteam.Audacity
+      - org.telegram.desktop
+      - com.uploadedlobster.peek
     state: present
     method: user
   tags: flatpak
