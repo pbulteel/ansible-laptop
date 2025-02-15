@@ -1,9 +1,9 @@
-- name: "Setup ssh handler so we can open ssh:// links in chrome"
-  copy:
-    src: "../files/ssh.desktop"
-    dest: "/home/{{ ansible_user }}/.local/share/applications/ssh.desktop"
-  tags:
-    - ssh
+#- name: "Setup ssh handler so we can open ssh:// links in chrome"
+  #copy:
+    #src: "../files/ssh.desktop"
+    #dest: "/home/{{ ansible_user }}/.local/share/applications/ssh.desktop"
+  #tags:
+    #- ssh
 
 - name: "Setup xdg-mime handler"
   shell: "xdg-mime default ssh.desktop x-scheme-handler/ssh" 
