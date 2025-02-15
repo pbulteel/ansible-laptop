@@ -239,13 +239,12 @@
   tags:
     - packages
 
-# - name: "Install keepassxc"
-#   apt: 
-#     name: keepassxc
-#     state: present 
-#     update_cache: yes
-#   become: true
-#   tags: packages
+- name: "Install shutter"
+  apt: 
+    name: keepassxc
+    state: present 
+  become: true
+  tags: packages
 
   # ossbasnfr001
   # 254.56
