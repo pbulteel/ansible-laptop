@@ -114,3 +114,24 @@
   tags: 
     - network-manager-vpn
     - vpn
+
+- name: "Install wireguard"
+  apt:
+    name: 
+     - wireguard
+     - wireguard-tools
+    state: present
+  become: true
+  tags:
+    - vpn
+    - wireguard
+
+- name: "Install tailscale"
+  apt:
+    name: tailscale
+    state: present
+  become: true
+  tags:
+    - vpn
+    - tailscale
+  
