@@ -50,10 +50,6 @@
   #tags:
     #- basic
     #- jitsi
-- include_tasks: lutris.yml
-  tags:
-    - basic
-    - lutris
 - include_tasks: mega.yml
   tags:
     - basic

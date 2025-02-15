@@ -14,6 +14,7 @@
       - com.getpostman.Postman
       - com.sweethome3d.Sweethome3d
       - com.github.vkohaupt.vokoscreenNG
+      - net.lutris.Lutris
       - com.logseq.Logseq
       - com.jgraph.drawio.desktop 
       - com.spotify.Client
