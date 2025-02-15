@@ -145,6 +145,7 @@
       - tailscale 
       - tailscale-archive-keyring
     state: present
+    update_cache: yes
   become: true
   tags:
     - vpn
