@@ -5,7 +5,7 @@
   block:
     - name: mega | no apt key
       ansible.builtin.get_url:
-        url: https://mega.nz/linux/repo/xUbuntu_24.10/Release.key
+        url: https://mega.nz/linux/repo/xUbuntu_24.10/Release.gpg
         dest: /usr/share/keyrings/meganz-archive-keyring.gpg
 
     - name: mega | apt source
