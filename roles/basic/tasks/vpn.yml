@@ -126,9 +126,24 @@
     - vpn
     - wireguard
 
+- name: "Setup tailscale Repo"
+  block:
+    - name: "Tailscale | Get key"
+      ansible.builtin.get_url:
+        url: "https://pkgs.tailscale.com/stable/ubuntu/$VERSION.noarmor.gpg" 
+        dest: /usr/share/keyrings/tailscale-archive-keyring.gpg 
+
+    - name: "tailscale | enable repo"
+      ansible.builtin.get_url:
+        url: "https://pkgs.tailscale.com/stable/ubuntu/$VERSION.tailscale-keyring.list" 
+        dest: /etc/apt/sources.list.d/tailscale.list
+  become: true
+
 - name: "Install tailscale"
   apt:
-    name: tailscale
+    name: 
+      - tailscale 
+      - tailscale-archive-keyring
     state: present
   become: true
   tags:
