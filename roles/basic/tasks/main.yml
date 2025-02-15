@@ -78,10 +78,6 @@
     # tags:
     #   - basic
     #   - steam
-- include_tasks: uget.yml
-  tags:
-    - basic
-    - uget
 - include_tasks: vpn.yml
   tags:
     - basic
