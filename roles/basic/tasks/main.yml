@@ -46,10 +46,10 @@
   tags:
     - basic
     - hashicorp
-- include_tasks: jitsi.yml
-  tags:
-    - basic
-    - jitsi
+#- include_tasks: jitsi.yml
+  #tags:
+    #- basic
+    #- jitsi
 - include_tasks: lutris.yml
   tags:
     - basic
