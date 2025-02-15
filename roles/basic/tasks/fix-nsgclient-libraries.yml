@@ -1,7 +1,7 @@
 ---
 - name: Fix the libraries needed by NSGClient vpn client`
   file: 
-    src: '/tmp/{{ item.src }}'
+    src: '{{ item.src }}'
     dest: '{{ item.dest }}'
     state: link
     owner: root

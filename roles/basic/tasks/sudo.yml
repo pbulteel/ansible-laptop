@@ -3,3 +3,4 @@
     dest: /etc/sudoers.d/10-pbulteel
     line: "pbulteel ALL=(ALL) NOPASSWD: ALL"
   become: true
+  tags: sudo

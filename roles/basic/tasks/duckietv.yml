@@ -2,4 +2,5 @@
   apt:
     deb: https://github.com/SchizoDuckie/DuckieTV/releases/download/1.1.5/DuckieTV-1.1.5-ubuntu-x64.deb
   become: true
+  tags: duckietv
 

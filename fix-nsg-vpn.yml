@@ -1,6 +1,0 @@
----
-- name: "Setup NSG VPN"
-  hosts: laptop
-  become: true
-  roles:
-    - nsg-vpn

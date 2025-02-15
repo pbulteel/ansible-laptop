@@ -1,20 +1,25 @@
 - name: "Add GnuPG key - Chrome."
-  apt_key:
-    url: https://dl.google.com/linux/linux_signing_key.pub
-    state: present
-  become: true
+  tags: 
+    - chrome-key
+    - chrome
+  block:
+    - name: Google chrome |no apt key
+      ansible.builtin.get_url:
+        url: https://dl.google.com/linux/linux_signing_key.pub
+        dest: /usr/share/keyrings/google-chrome.asc
 
-- name: "Add Repo: Chrome"
-  apt_repository:
-    repo: deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main
-    state: present
-    filename: 'google-chrome'
+    - name: Google chrome | apt source
+      ansible.builtin.apt_repository:
+        repo: "deb [arch=amd64 signed-by=/usr/share/keyrings/google-chrome.asc] http://dl.google.com/linux/chrome/deb/ stable main"
+        state: present
+        filename: google-chrome.list
   become: true
 
 - name: "Install google-chrome-stable"
-  apt: 
+  ansible.builtin.apt: 
     name: google-chrome-stable
     state: present 
     update_cache: yes
   become: true
+  tags: chrome
 

@@ -4,71 +4,95 @@
     state: present 
     update_cache: yes
   become: true
+  tags:
+    - packages
 
 - name: "Install vim"
   apt: 
     name: vim
     state: present 
   become: true
+  tags:
+    - packages
 
 - name: "Install flameshot"
   apt: 
     name: flameshot
     state: present 
   become: true
+  tags:
+    - packages
 
 - name: "Install inkscape"
   apt: 
     name: inkscape
     state: present 
   become: true
+  tags:
+    - packages
 
 - name: "Install gimp"
   apt: 
     name: gimp
     state: present 
   become: true
+  tags:
+    - packages
 
 - name: "Install blender"
   apt: 
     name: blender
     state: present 
   become: true
+  tags:
+    - packages
 
 - name: "Install backintime-qt"
   apt: 
     name: backintime-qt
     state: present 
   become: true
+  tags:
+    - packages
 
 - name: "Install kgpg"
   apt: 
     name: kgpg
     state: present 
   become: true
+  tags:
+    - packages
 
 - name: "Install hexchat"
   apt: 
     name: hexchat
     state: present 
   become: true
+  tags:
+    - packages
 
 - name: "Install linssid"
   apt: 
     name: linssid
     state: present 
   become: true
+  tags:
+    - packages
 
 - name: "Install wireshark"
   apt: 
     name: wireshark
     state: present 
   become: true
+  tags:
+    - packages
 
 - name: "Install vlc"
   apt: 
     name: vlc
     state: present 
+  tags:
+    - packages
   become: true
 
 - name: "Install minicom"
@@ -76,117 +100,152 @@
     name: minicom
     state: present 
   become: true
+  tags:
+    - packages
 
 - name: "Install hplip-gui"
   apt: 
     name: hplip
     state: present 
   become: true
-
-    #- name: "Install gtk-recordmydesktop"
-    #apt: 
-    #name: gtk-recordmydesktop
-    #state: present 
-    #become: true
+  tags:
+    - packages
 
 - name: "Install git"
   apt: 
     name: git
     state: present 
   become: true
+  tags:
+    - packages
 
 - name: "Install ruby"
   apt: 
     name: ruby
     state: present 
   become: true
+  tags:
+    - packages
 
 - name: "Install ruby-dev"
   apt: 
     name: ruby-dev
     state: present 
   become: true
+  tags:
+    - packages
 
 - name: "Install rubygems"
   apt: 
     name: rubygems
     state: present 
   become: true
+  tags:
+    - packages
 
 - name: "Install build-essential"
   apt: 
     name: build-essential
     state: present 
   become: true
+  tags:
+    - packages
 
 - name: "Install devscripts"
   apt: 
     name: devscripts
     state: present 
   become: true
+  tags:
+    - packages
 
 - name: "Install remmina"
   apt: 
     name: remmina
     state: present 
   become: true
-
-- name: "Install gdebi"
-  apt: 
-    name: gdebi-core
-    state: present 
-  become: true
+  tags:
+    - packages
 
 - name: "Install mssh"
   apt: 
     name: mssh
     state: present 
   become: true
+  tags:
+    - packages
 
 - name: "Install libproc-queue-perl - for dist"
   apt: 
     name: libproc-queue-perl
     state: present 
   become: true
+  tags:
+    - packages
 
 - name: "Install ipcalc"
   apt: 
     name: ipcalc
     state: present 
   become: true
+  tags:
+    - packages
 
 - name: "Install htop"
   apt: 
     name: htop
     state: present 
   become: true
+  tags:
+    - packages
 
 - name: "Install nmap"
   apt: 
     name: nmap
     state: present 
   become: true
+  tags:
+    - packages
 
-- name: "Install ntp"
+- name: "Install chrony"
   apt: 
-    name: ntp
+    name: chrony
     state: present 
   become: true
+  tags:
+    - packages
 
 - name: "Install iftop"
   apt: 
     name: iftop
     state: present 
   become: true
+  tags:
+    - packages
 
 - name: "Install nextcloud-desktop"
   apt: 
     name: nextcloud-desktop
     state: present 
   become: true
+  tags:
+    - packages
 
 - name: "Install debhelper"
   apt: 
     name: debhelper
     state: present 
   become: true
+  tags:
+    - packages
+
+# - name: "Install keepassxc"
+#   apt: 
+#     name: keepassxc
+#     state: present 
+#     update_cache: yes
+#   become: true
+#   tags: packages
+
+  # ossbasnfr001
+  # 254.56

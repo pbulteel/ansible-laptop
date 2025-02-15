@@ -2,25 +2,35 @@
   copy:
     src: "../files/ssh.desktop"
     dest: "/home/pbulteel/.local/share/applications/ssh.desktop"
+  tags:
+    - ssh
 
 - name: "Setup xdg-mime handler"
   shell: "xdg-mime default ssh.desktop x-scheme-handler/ssh" 
+  tags:
+    - ssh
 
 - name: "Harden ssh: re-generate rsa keys"
   shell: 'ssh-keygen -t rsa -b 4096 -f /etc/ssh/ssh_hosts_rsa_key -N ""'
   notify: restart ssh
   become: true
+  tags:
+    - ssh
 
 - name: "Harden ssh: generate ed25519 keys"
   shell: 'ssh-keygen -t ed25519 -f /etc/ssh/ssh_host_ed25519_key -N ""'
   notify: restart ssh
   become: true
+  tags:
+    - ssh
 
 - name: "Harden ssh: Remove small Diffie-Hellman moduli"
   shell: awk '$5 >= 3071' /etc/ssh/moduli > /etc/ssh/moduli.safe ; 
          mv /etc/ssh/moduli.safe /etc/ssh/moduli
   notify: restart ssh
   become: true
+  tags:
+    - ssh
 
 - name: "Harden ssh: Disable the DSA and ECDSA host keys"
   lineinfile:
@@ -30,18 +40,18 @@
     validate: "sshd -f %s -T"
   notify: restart ssh
   become: true
+  tags:
+    - ssh
 
 - name: "Harden ssh: Restrict supported key exchange, cipher, and MAC algorithms"
-  lineinfile:
-    path: /etc/ssh/sshd_config
-    : echo "# hardening guide.
-    KexAlgorithms curve25519-sha256@libssh.org,diffie-hellman-group-exchange-sha256
-    Ciphers chacha20-poly1305@openssh.com,aes256-gcm@openssh.com,aes128-gcm@openssh.com,aes256-ctr,aes192-ctr,aes128-ctr
-    MACs hmac-sha2-256-etm@openssh.com,hmac-sha2-512-etm@openssh.com,umac-128-etm@openssh.com" 
-    mode: '0600'
-    owner: 0
-    group: 0
-    backup: yes
+  shell: printf '# Restrict key exchange, cipher, and MAC algorithms, as per sshaudit.com hardening guide.\n
+    KexAlgorithms curve25519-sha256,curve25519-sha256@libssh.org,diffie-hellman-group16-sha512,
+    diffie-hellman-group18-sha512,diffie-hellman-group-exchange-sha256\n
+    Ciphers chacha20-poly1305@openssh.com,aes256-gcm@openssh.com,aes128-gcm@openssh.com,aes256-ctr,aes192-ctr,aes128-ctr\n
+    MACs hmac-sha2-256-etm@openssh.com,hmac-sha2-512-etm@openssh.com,umac-128-etm@openssh.com\n
+    HostKeyAlgorithms ssh-ed25519,ssh-ed25519-cert-v01@openssh.com,sk-ssh-ed25519@openssh.com,
+    sk-ssh-ed25519-cert-v01@openssh.com,rsa-sha2-256,rsa-sha2-512,rsa-sha2-256-cert-v01@openssh.com,
+    rsa-sha2-512-cert-v01@openssh.com' >> /etc/ssh/sshd_config.d/ssh-audit_hardening.conf
   become: true
-        
-    
+  tags:
+    - ssh

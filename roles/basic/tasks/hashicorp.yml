@@ -1,14 +1,18 @@
 - name: "Add GnuPG key - Hashicorp."
-  apt_key:
-    url: https://apt.releases.hashicorp.com/gpg
-    state: present
-  become: true
+  tags:
+    - hashicorp
+    - hashicorp-keys
+  block:
+    - name: hashicorp |no apt key
+      ansible.builtin.get_url:
+        url: https://apt.releases.hashicorp.com/gpg
+        dest: /etc/apt/trusted.gpg.d/hashicorp.asc
 
-- name: "Add Repo: Hashicorp"
-  apt_repository:
-    repo: deb [arch=amd64] https://apt.releases.hashicorp.com jammy main
-    state: present
-    filename: 'hashicorp'
+    - name: hashicorp | apt source
+      ansible.builtin.apt_repository:
+        repo: "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/hashicorp.asc] https://apt.releases.hashicorp.com {{ ansible_distribution_release }} main"
+        state: present
+        filename: hashicorp
   become: true
 
 - name: "Install packer"
@@ -17,15 +21,24 @@
     state: present 
     update_cache: yes
   become: true
+  tags:
+    - hashicorp
+    - packer
 
 - name: "Install terraform"
   apt: 
     name: terraform
     state: present 
   become: true
+  tags: 
+    - hashicorp
+    - terraform
 
 - name: "Install vault"
   apt: 
     name: vault
     state: present 
   become: true
+  tags:
+    - hashicorp
+    - vault

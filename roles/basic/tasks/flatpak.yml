@@ -1,4 +1,4 @@
-- name: "Install packages that are installed via flatpack"
+- name: "Install packages that are installed via flatpak"
   community.general.flatpak: 
     name:
       - com.calibre_ebook.calibre
@@ -18,3 +18,4 @@
       - com.github.vkohaupt.vokoscreenNG
     state: present
     method: user
+  tags: flatpak

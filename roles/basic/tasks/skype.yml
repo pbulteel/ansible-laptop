@@ -3,6 +3,7 @@
     url: https://repo.skype.com/data/SKYPE-GPG-KEY
     state: present
   become: true
+  tags: skype
 
 - name: "Add Repo: Skype"
   apt_repository:
@@ -10,6 +11,7 @@
     state: present
     filename: 'skype-stable'
   become: true
+  tags: skype
 
 - name: "Install skypeforlinux"
   apt: 
@@ -17,4 +19,5 @@
     state: present 
     update_cache: yes
   become: true
+  tags: skype
 

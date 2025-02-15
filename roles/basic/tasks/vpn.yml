@@ -4,30 +4,45 @@
     state: present 
     update_cache: yes
   become: true
+  tags: 
+    - network-manager-vpn
+    - vpn
 
 - name: "Install network-manager-openvpn-gnome"
   apt: 
     name: network-manager-openvpn-gnome
     state: present 
   become: true
+  tags: 
+    - network-manager-vpn
+    - vpn
 
 - name: "Install network-manager-openconnect-gnome"
   apt: 
     name: network-manager-openconnect-gnome
     state: present 
   become: true
+  tags: 
+    - network-manager-vpn
+    - vpn
 
 - name: "Install network-manager-ssh-gnome"
   apt: 
     name: network-manager-ssh-gnome
     state: present 
   become: true
+  tags: 
+    - network-manager-vpn
+    - vpn
 
 - name: "Install dnsmasq"
   apt: 
     name: dnsmasq
     state: present 
   become: true
+  tags: 
+    - network-manager-vpn
+    - vpn
 
 - name: "Add o2 wifi dns to Network Manager dnsmasq.d"
   copy:
@@ -43,6 +58,9 @@
   notify:
     - restart dnsmasq
   become: true
+  tags: 
+    - network-manager-vpn
+    - vpn
 
 - name: "Add o2 dns to Network Manager dnsmasq.d"
   copy:
@@ -58,6 +76,9 @@
   notify:
     - restart dnsmasq
   become: true
+  tags: 
+    - network-manager-vpn
+    - vpn
 
 - name: "Add unify wifi dns to Network Manager dnsmasq.d"
   copy:
@@ -73,6 +94,9 @@
   notify:
     - restart dnsmasq
   become: true
+  tags: 
+    - network-manager-vpn
+    - vpn
 
 - name: "Enable dnsmasq base in network manager"
   lineinfile: >
@@ -87,3 +111,6 @@
   notify:
     - restart network manager
   become: true
+  tags: 
+    - network-manager-vpn
+    - vpn

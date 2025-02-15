@@ -1,0 +1,25 @@
+- name: "Add GnuPG key - Kubectl."
+  tags: 
+    - google-key
+    - kubectl
+  block:
+    - name: Kubectl | no apt key
+      ansible.builtin.get_url:
+        url: https://dl.google.com/linux/linux_signing_key.pub
+        dest: /usr/share/keyrings/kubernetes-archive-keyring.gpg
+
+    - name: Kubectl | apt source
+      ansible.builtin.apt_repository:
+        repo: "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main"
+        state: present
+        filename: kubernetes.list
+  become: true
+
+- name: "Install kubectl"
+  ansible.builtin.apt: 
+    name: kubectl
+    state: present 
+    update_cache: yes
+  become: true
+  tags: kubectl
+

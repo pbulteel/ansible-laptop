@@ -1,7 +1,7 @@
 - name: "Add GnuPG key: zoom."
-  apt_key:
+  ansible.builtin.get_url:
     url: https://zoom.us/linux/download/pubkey
-    state: present
+    dest: /etc/apt/trusted.gpg.d/zoom.asc
   become: true
 
 - name: "Install zoom"

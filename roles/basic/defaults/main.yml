@@ -1,7 +1,4 @@
 o2wifi_dnsmasq_addresses:
-  -
-    domain: o2wifi.co.uk
-    ip: 172.16.9.2
   - 
     domain: wifi.uk.pri.o2.com
     ip: 172.24.0.97
@@ -10,6 +7,12 @@ o2_dnsmasq_addresses:
   -
     domain: pri.o2.com
     ip: 172.17.61.25
+  -
+    domain: pri.o2.com
+    ip: 158.230.106.56
+  -
+    domain: pri.o2.com    
+    ip: 172.17.8.146
 
 unify_dnsmasq_addresses:
   - 

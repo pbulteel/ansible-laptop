@@ -1,14 +1,17 @@
 - name: "Add GnuPG key - Multisystem."
-  apt_key:
-    url: http://liveusb.info/multisystem/depot/multisystem.asc
-    state: present
-  become: true
+  tags: 
+    - multisystem
+    - multisystem-key
+  block:
+    - name: multisystem |no apt key
+      ansible.builtin.get_url:
+        url: http://liveusb.info/multisystem/depot/multisystem.asc
+        dest: /etc/apt/trusted.gpg.d/multisystem.asc
 
-- name: "Add Repo: Multisystem"
-  apt_repository:
-    repo: deb http://liveusb.info/multisystem/depot all main
-    state: present
-    filename: 'multisystem'
+    - name: multisystem | apt source
+      ansible.builtin.apt_repository:
+        repo: "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/multisystem.asc] http://liveusb.info/multisystem/depot all main"
+        state: present
   become: true
 
 - name: "Install multisystem"
@@ -17,4 +20,5 @@
     state: present 
     update_cache: yes
   become: true
+  tags: multisystem
 

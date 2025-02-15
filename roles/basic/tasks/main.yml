@@ -3,33 +3,117 @@
     name: '*'
     state: latest
   become: true
+  tags: updates
 
-- include: packages.yml
-  #- include: snaps.yml
-  #- include: flatpak.yml
+- include_tasks: packages.yml
+  tags:
+    - basic
+    - packages
 
-- include: apache.yml
-- include: cifs-utils.yml
-- include: chrome.yml
-- include: dbeaver.yml
-- include: dropbox.yml
-#- include: duckietv.yml
-- include: fpm.yml
-#- include: freedownloadmanager.yml
-- include: hashicorp.yml
-#- include: jitsi.yml
-#- include: lutris.yml
-- include: mega.yml
-- include: microsoft.yml
-- include: multisystem.yml
-  #- include: openfortivpn.yml
-- include: openwebstart.yml
-- include: rclone.yml
-  #- include: skype.yml
-  #- include: steam.yml
-  #- include: uget.yml
-- include: vpn.yml
-- include: zoom.yml
+- include_tasks: apache.yml
+  tags:
+    - basic
+    - apache
+- include_tasks: cifs-utils.yml
+  tags:
+    - basic
+    - cifs
+- include_tasks: chrome.yml
+  tags:
+    - basic
+    - chrome
+- include_tasks: dbeaver.yml
+  tags:
+    - basic
+    - dbeaver
+- include_tasks: dropbox.yml
+  tags:
+    - basic
+    - dropbox
+#- include_tasks: duckietv.yml
+  # tags:
+  #   - basic
+  #   - duckietv
+- include_tasks: fpm.yml
+  tags:
+    - basic
+    - fpm
+#- include_tasks: freedownloadmanager.yml
+  # tags:
+  #   - basic
+  #   - freedownloadmanager
+- include_tasks: hashicorp.yml
+  tags:
+    - basic
+    - hashicorp
+#- include_tasks: jitsi.yml
+  # tags:
+  #   - basic
+  #   - jitsi
+#- include_tasks: lutris.yml
+  # tags:
+  #   - basic
+  #   - lutris
+- include_tasks: mega.yml
+  tags:
+    - basic
+    - mega
+- include_tasks: microsoft.yml
+  tags:
+    - basic
+    - microsoft
+- include_tasks: multisystem.yml
+  tags:
+    - basic
+    - multisystem
+  #- include_tasks: openfortivpn.yml
+    # tags:
+    #   - basic
+    #   - openfortivpn
+- include_tasks: openwebstart.yml
+  tags:
+    - basic
+    - openwebstart
+- include_tasks: rclone.yml
+  tags:
+    - basic
+    - rclone
+  #- include_tasks: skype.yml
+    # tags:
+    #   - basic
+    #   - skype
+  #- include_tasks: steam.yml
+    # tags:
+    #   - basic
+    #   - steam
+  #- include_tasks: uget.yml
+    # tags:
+    #   - basic
+    #   - uget
+- include_tasks: vpn.yml
+  tags:
+    - basic
+    - vpn
+- include_tasks: zoom.yml
+  tags:
+    - basic
+    - zoom
 
+- include_tasks: ssh.yml
+  tags:
+    - basic
+    - ssh
 
-#- include: ssh.yml
+- include_tasks: kubectl.yaml
+  tags:
+    - basic
+    - kubectl
+
+  #- include_tasks: snaps.yml
+    # tags:
+    #   - basic
+    #   - snaps
+#- include_tasks: flatpak.yml
+  # tags:
+  #   - basic
+  #   - flatpack

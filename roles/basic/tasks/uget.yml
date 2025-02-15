@@ -4,6 +4,7 @@
     state: present
     filename: 'uget-integrator'
   become: true
+  tags: uget
 
 - name: "Install uget integrator"
   apt: 
@@ -11,9 +12,11 @@
     state: present 
     update_cache: yes
   become: true
+  tags: uget
 
 - name: "Install uget"
   apt: 
     name: uget
     state: present 
   become: true
+  tags: uget

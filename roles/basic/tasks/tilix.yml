@@ -4,6 +4,7 @@
     state: present
     filename: 'webupd8team-ubuntu-terminix'
   become: true
+  tags: tilix
 
 - name: "Install tilix"
   apt: 
@@ -11,4 +12,5 @@
     state: present 
     update_cache: yes
   become: true
+  tags: tilix
 

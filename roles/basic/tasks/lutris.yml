@@ -4,6 +4,9 @@
     repo: ppa:lutris-team/lutris
     state: present
   become: true
+  tags: 
+    - lutris-repo
+    - lutris
 
 - name: "Install lutris"
   apt: 
@@ -11,4 +14,5 @@
     state: present 
     update_cache: yes
   become: true
+  tags: lutris
 

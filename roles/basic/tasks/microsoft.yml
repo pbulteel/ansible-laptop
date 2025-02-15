@@ -1,21 +1,24 @@
 - name: "Add GnuPG key - Microsoft."
-  apt_key:
-    url: https://packages.microsoft.com/keys/microsoft.asc
-    state: present
-  become: true
+  tags:
+    - microsoft 
+    - microsoft-repo
+    - vscode
+    - edge
+  block:
+    - name: Microsoft |no apt key
+      ansible.builtin.get_url:
+        url: https://packages.microsoft.com/keys/microsoft.asc
+        dest: /etc/apt/trusted.gpg.d/microsoft.asc
 
-- name: "Add Repo: VSCode"
-  apt_repository:
-    repo: deb [arch=amd64] http://packages.microsoft.com/repos/vscode stable main
-    state: present
-    filename: 'vscode'
-  become: true
+    - name: Microsoft | apt source vscode
+      ansible.builtin.apt_repository:
+        repo: "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/microsoft.asc] http://packages.microsoft.com/repos/vscode stable main"
+        state: present
 
-- name: "Add Repo: Teams"
-  apt_repository:
-    repo: deb [arch=amd64] http://packages.microsoft.com/repos/ms-teams stable main
-    state: present
-    filename: 'teams'
+    - name: Microsoft | apt source edge
+      ansible.builtin.apt_repository:
+        repo: "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/microsoft.asc] http://packages.microsoft.com/repos/edge stable main"
+        state: present             
   become: true
 
 - name: "Install vscode (code)"
@@ -24,11 +27,16 @@
     state: present 
     update_cache: yes
   become: true
+  tags:
+    - microsoft
+    - vscode
 
-- name: "Install teams"
+- name: "Install edge"
   apt: 
-    name: teams
+    name: microsoft-edge-stable
     state: present 
     update_cache: yes
   become: true
-
+  tags:
+    - microsoft
+    - edge

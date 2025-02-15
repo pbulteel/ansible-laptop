@@ -1,23 +1,26 @@
 - name: "Add GnuPG key: MEGA"
-  apt_key:
-    url: https://mega.nz/linux/MEGAsync/xUbuntu_21.10/Release.key
-    state: present
-  ignore_errors: yes
-  become: true
+  tags:
+    - mega
+    - mega-keys
+  block:
+    - name: mega | no apt key
+      ansible.builtin.get_url:
+        url: https://mega.nz/linux/repo/xUbuntu_22.04/Release.key
+        dest: /etc/apt/trusted.gpg.d/mega.asc
 
-- name: "Add Repo: MEGAsync"
-  apt_repository:
-    repo: deb https://mega.nz/linux/MEGAsync/xUbuntu_22.04/ ./
-    state: present
-    filename: 'megasync'
-  ignore_errors: yes
+    - name: mega | apt source
+      ansible.builtin.apt_repository:
+        repo: "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/mega.asc] https://mega.nz/linux/repo/xUbuntu_22.04/ ./"
+        state: present
   become: true
 
 - name: "Install megasync"
   apt: 
-    url: https://mega.nz/linux/repo/xUbuntu_22.04/amd64/megasync-xUbuntu_22.04_amd64.deb
+    deb: https://mega.nz/linux/repo/xUbuntu_22.04/amd64/megasync-xUbuntu_22.04_amd64.deb
     state: present 
     update_cache: yes
-  ignore_errors: yes
+  ignore_errors: true
   become: true
+  tags:
+    - mega
 

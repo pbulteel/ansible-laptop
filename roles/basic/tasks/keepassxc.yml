@@ -3,6 +3,9 @@
     repo: ppa:phoerious/keepassxc
     state: present
   become: true
+  tags:
+    - keepassxc
+    - keepassxc-repo
 
 - name: "Install keepassxc"
   apt: 
@@ -10,4 +13,5 @@
     state: present 
     update_cache: yes
   become: true
+  tags: keepassxc
 

@@ -4,6 +4,8 @@
     state: present 
     update_cache: yes
   become: true
+  tags:
+    - apache
 
 - name: "Install certbot"
   apt: 
@@ -11,12 +13,9 @@
     state: present 
     update_cache: yes
   become: true
-
-#- name: "Install python-certbot-apache"
-  #apt: 
-    #name: python-certbot-apache
-    #state: present 
-    #update_cache: yes
+  tags:
+    - apache
+    - certbot
 
 - name: "Install openssl"
   apt: 
@@ -24,6 +23,9 @@
     state: present 
     update_cache: yes
   become: true
+  tags:
+    - apache
+    - openssl
 
 #- name: "Configure Secure ciphers"
   #lineinfile: 
@@ -31,4 +33,3 @@
     #regexp: "^SSLCipher"
     #line: "  SSLCipherSuite \"EECDH+ECDSA+AESGCM EECDH+aRSA+AESGCM EECDH+ECDSA+SHA384 EECDH+ECDSA+SHA256 EECDH+aRSA+SHA384 EECDH+aRSA+SHA256 EECDH+AESGCM EECDH EDH+AESGCM EDH+aRSA HIGH !MEDIUM !LOW !aNULL !eNULL !LOW !RC4 !MD5 !EXP !PSK !SRP !DSS !DES !3DES\""
     #handler: apache-restart
-

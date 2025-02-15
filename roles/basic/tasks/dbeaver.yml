@@ -4,6 +4,7 @@
     repo: ppa:serge-rider/dbeaver-ce
     state: present
   become: true
+  tags: dbeaver
 
 - name: "Install DBeaver"
   apt: 
@@ -11,4 +12,5 @@
     state: present 
     update_cache: yes
   become: true
+  tags: dbeaver
 
