@@ -1,6 +1,6 @@
 - name: "Install dropbox."
   apt:
-    deb: https://linux.dropbox.com/packages/ubuntu/dropbox_2020.03.04_amd64.deb
+    deb: https://linux.dropbox.com/packages/ubuntu/dropbox_2024.04.17_amd64.deb 
   become: true
   tags: dropbox
 
