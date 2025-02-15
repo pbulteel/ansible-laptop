@@ -46,14 +46,14 @@
   tags:
     - basic
     - hashicorp
-#- include_tasks: jitsi.yml
-  # tags:
-  #   - basic
-  #   - jitsi
-#- include_tasks: lutris.yml
-  # tags:
-  #   - basic
-  #   - lutris
+- include_tasks: jitsi.yml
+  tags:
+    - basic
+    - jitsi
+- include_tasks: lutris.yml
+  tags:
+    - basic
+    - lutris
 - include_tasks: mega.yml
   tags:
     - basic
@@ -66,10 +66,10 @@
   tags:
     - basic
     - multisystem
-  #- include_tasks: openfortivpn.yml
-    # tags:
-    #   - basic
-    #   - openfortivpn
+- include_tasks: openfortivpn.yml
+  tags:
+    - basic
+    - openfortivpn
 - include_tasks: openwebstart.yml
   tags:
     - basic
@@ -86,10 +86,10 @@
     # tags:
     #   - basic
     #   - steam
-  #- include_tasks: uget.yml
-    # tags:
-    #   - basic
-    #   - uget
+- include_tasks: uget.yml
+  tags:
+    - basic
+    - uget
 - include_tasks: vpn.yml
   tags:
     - basic
@@ -109,11 +109,11 @@
     - basic
     - kubectl
 
-  #- include_tasks: snaps.yml
-    # tags:
-    #   - basic
-    #   - snaps
-#- include_tasks: flatpak.yml
-  # tags:
-  #   - basic
-  #   - flatpack
+- include_tasks: snaps.yml
+  tags:
+    - basic
+    - snaps
+- include_tasks: flatpak.yml
+  tags:
+    - basic
+    - flatpack
