@@ -1,14 +1,11 @@
 - name: "Add GnuPG key - openfortivpn."
   block:
-    - name: somerepo |no apt key
-      ansible.builtin.apt_key:
-        keyserver: keyserver.ubuntu.com
-        id: 2FAB19E7CCB7F415
-        dest: /usr/share/keyrings/iteas-keyring.gpg
+    - name: openfortivpn |no apt key
+      ansible.builtin.shell: 'gpg -k && gpg --no-default-keyring --keyring /usr/share/keyrings/iteas-keyring.gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 23CAE45582EB0928'
 
     - name: somerepo | apt source
       ansible.builtin.apt_repository:
-        repo: "deb [arch=amd64 signed-by=/usr/share/keyrings/iteas-keyring.gpg] https://apt.iteas.at/iteas {{ ansible_distribution_release }} main"
+        repo: "deb [arch=amd64 signed-by=/usr/share/keyrings/iteas-keyring.gpg] https://apt.iteas.at/iteas noble main"
         state: present
   become: true
   tags:
@@ -17,7 +14,7 @@
 - name: "Install openfortivpn"
   apt: 
     name: openfortigui
-    state: present 
+    state: present
     update_cache: yes
   become: true
   tags:
