@@ -2,21 +2,17 @@
   command: snap install {{ item }} --classic
   with_items:
   - 0ad
-  - atom
   - bashtop
   - bpytop
   - gifcurry
   - keepassxc
   - kruler
-  - kubectl
   - natron
   - p3x-onenote
   - picard
   - postman
   - powershell
-  - shutter
   - slack
   - sweethome3d-homedesign
-  - vokoscreen-ng
   - zaproxy
   tags: snap
