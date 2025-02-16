@@ -241,7 +241,14 @@
 
 - name: "Install shutter"
   apt: 
-    name: keepassxc
+    name: shutter
+    state: present 
+  become: true
+  tags: packages
+
+- name: "Install peek"
+  apt: 
+    name: peek
     state: present 
   become: true
   tags: packages

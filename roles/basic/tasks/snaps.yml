@@ -2,17 +2,22 @@
   command: snap install {{ item }} --classic
   with_items:
   - 0ad
+  - audacity
   - bashtop
   - bpytop
+  - calibre
   - gifcurry
   - keepassxc
   - kruler
+  - logseq
   - natron
   - p3x-onenote
   - picard
   - postman
   - powershell
   - slack
+  - spotify
   - sweethome3d-homedesign
+  - telegram
   - zaproxy
   tags: snap

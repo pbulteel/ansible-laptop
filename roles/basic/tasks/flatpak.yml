@@ -5,22 +5,13 @@
 - name: "Install packages that are installed via flatpak"
   community.general.flatpak: 
     name:
-      - com.calibre_ebook.calibre
       - io.dbeaver.DBeaverCommunity
-      - io.github.mimbrero.WhatsAppDesktop
-      - org.audacityteam.Audacity
       - org.clementine_player.Clementine
       - org.kde.kruler
-      - fr.natron.Natron
-      - org.musicbrainz.Picard
       - com.github.vkohaupt.vokoscreenNG
       - net.lutris.Lutris
-      - com.logseq.Logseq
       - com.jgraph.drawio.desktop 
-      - com.spotify.Client
-      - org.audacityteam.Audacity
-      - org.telegram.desktop
-      - com.uploadedlobster.peek
+
     state: present
     method: user
   tags: flatpak
