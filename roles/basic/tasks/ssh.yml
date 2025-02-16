@@ -52,6 +52,14 @@
     HostKeyAlgorithms ssh-ed25519,ssh-ed25519-cert-v01@openssh.com,sk-ssh-ed25519@openssh.com,
     sk-ssh-ed25519-cert-v01@openssh.com,rsa-sha2-256,rsa-sha2-512,rsa-sha2-256-cert-v01@openssh.com,
     rsa-sha2-512-cert-v01@openssh.com' >> /etc/ssh/sshd_config.d/ssh-audit_hardening.conf
+  notify: restart ssh
   become: true
   tags:
     - ssh
+
+- handler: 
+    - name: reload ssh
+      service:
+        name: ssh
+        state: restarted
+   
