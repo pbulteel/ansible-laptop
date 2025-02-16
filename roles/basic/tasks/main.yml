@@ -104,8 +104,8 @@
 - include_tasks: snaps.yml
   tags:
     - basic
-    - snaps
+    - snap
 - include_tasks: flatpak.yml
   tags:
     - basic
-    - flatpack
+    - flatpak
