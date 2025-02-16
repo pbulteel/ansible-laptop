@@ -96,7 +96,7 @@
     #- basic
     #- ssh
 
-- include_tasks: kubectl.yaml
+- include_tasks: kubectl.yml
   tags:
     - basic
     - kubectl
