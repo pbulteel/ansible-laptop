@@ -56,10 +56,3 @@
   become: true
   tags:
     - ssh
-
-- handler: 
-    - name: reload ssh
-      service:
-        name: ssh
-        state: restarted
-   

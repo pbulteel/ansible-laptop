@@ -4,3 +4,8 @@
 
 - name: restart network manager
   service: name=network-manager state=restarted
+
+- name: reload ssh
+  service:
+    name: ssh
+    state: restarted
