@@ -4,13 +4,11 @@
     - kubectl
   block:
     - name: Kubectl | no apt key
-      ansible.builtin.get_url:
-        url: https://dl.google.com/linux/linux_signing_key.pub
-        dest: /usr/share/keyrings/kubernetes-archive-keyring.gpg
-
+      ansible.builtin.shell: 'curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.32/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg'
+        
     - name: Kubectl | apt source
       ansible.builtin.apt_repository:
-        repo: "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main"
+        repo: "deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.32/deb/ /"
         state: present
         filename: kubernetes.list
   become: true
