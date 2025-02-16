@@ -91,10 +91,10 @@
     - basic
     - zoom
 
-- include_tasks: ssh.yml
-  tags:
-    - basic
-    - ssh
+#- include_tasks: ssh.yml
+  #tags:
+    #- basic
+    #- ssh
 
 - include_tasks: kubectl.yaml
   tags:
