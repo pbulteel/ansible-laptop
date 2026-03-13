@@ -1,5 +1,8 @@
-- name: "Install ghostty"
-  ansible.builtin.apt:
-    deb: https://github.com/mkasberg/ghostty-ubuntu/releases/download/1.1.2-0-ppa1/ghostty_1.1.2-0.ppa1_amd64_24.10.deb
+- name: "Install Ghostty using official install script"
+  shell: |
+    curl -fsSL https://raw.githubusercontent.com/mkasberg/ghostty-ubuntu/HEAD/install.sh | bash
+  args:
+    creates: /usr/bin/ghostty
+  become: true
   tags:
     - ghostty

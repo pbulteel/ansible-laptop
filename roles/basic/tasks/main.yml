@@ -46,10 +46,23 @@
   tags:
     - basic
     - ghostty
+- include_tasks: docker.yml
+  tags:
+    - basic
+    - docker
+- include_tasks: github-cli.yml
+  tags:
+    - basic
+    - github-cli
+    - gh
 - include_tasks: hashicorp.yml
   tags:
     - basic
     - hashicorp
+- include_tasks: openbao.yml
+  tags:
+    - basic
+    - openbao
 #- include_tasks: jitsi.yml
   #tags:
     #- basic
@@ -100,6 +113,18 @@
   tags:
     - basic
     - kubectl
+
+- include_tasks: helm.yml
+  tags:
+    - basic
+    - helm
+    - kubernetes
+
+- include_tasks: nvm.yml
+  tags:
+    - basic
+    - nvm
+    - node
 
 - include_tasks: snaps.yml
   tags:

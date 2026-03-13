@@ -1,0 +1,36 @@
+- name: "Download OpenBao GPG key"
+  ansible.builtin.get_url:
+    url: https://openbao.org/assets/openbao-gpg-pub-20240618.asc
+    dest: /etc/apt/trusted.gpg.d/openbao.asc
+  become: true
+  tags:
+    - openbao
+
+- name: "Get latest OpenBao version"
+  shell: |
+    curl -s https://api.github.com/repos/openbao/openbao/releases/latest | jq -r '.tag_name' | sed 's/^v//'
+  register: openbao_version
+  changed_when: false
+  tags:
+    - openbao
+
+- name: "Download OpenBao .deb package"
+  ansible.builtin.get_url:
+    url: "https://github.com/openbao/openbao/releases/download/v{{ openbao_version.stdout }}/bao_{{ openbao_version.stdout }}_linux_amd64.deb"
+    dest: "/tmp/bao_{{ openbao_version.stdout }}_linux_amd64.deb"
+  tags:
+    - openbao
+
+- name: "Install OpenBao package"
+  ansible.builtin.apt:
+    deb: "/tmp/bao_{{ openbao_version.stdout }}_linux_amd64.deb"
+  become: true
+  tags:
+    - openbao
+
+- name: "Remove downloaded package file"
+  ansible.builtin.file:
+    path: "/tmp/bao_{{ openbao_version.stdout }}_linux_amd64.deb"
+    state: absent
+  tags:
+    - openbao

@@ -1,3 +1,9 @@
+- name: "install flatpak"
+  apt:
+    name: flatpak
+    state: present
+  tags: flatpak
+
 - name: "Install flatpak and flatpakhub"
   shell: flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
   tags: flatpak
@@ -8,8 +14,6 @@
       - io.dbeaver.DBeaverCommunity
       - org.clementine_player.Clementine
       - org.kde.kruler
-      - com.github.vkohaupt.vokoscreenNG
-      - net.lutris.Lutris
       - com.jgraph.drawio.desktop 
 
     state: present

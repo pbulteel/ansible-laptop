@@ -1,0 +1,54 @@
+- name: "Install dependencies for nvm"
+  apt:
+    name:
+      - curl
+      - build-essential
+      - libssl-dev
+    state: present
+  become: true
+  tags:
+    - nvm
+    - node
+
+- name: "Check if nvm is already installed"
+  stat:
+    path: "{{ ansible_env.HOME }}/.nvm"
+  register: nvm_dir
+  tags:
+    - nvm
+    - node
+
+- name: "Download and install nvm"
+  shell: |
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+  args:
+    creates: "{{ ansible_env.HOME }}/.nvm/nvm.sh"
+  when: not nvm_dir.stat.exists
+  tags:
+    - nvm
+    - node
+
+- name: "Install Node.js LTS via nvm"
+  shell: |
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+    nvm install --lts
+    nvm use --lts
+    nvm alias default lts/*
+  args:
+    executable: /bin/bash
+  tags:
+    - nvm
+    - node
+
+- name: "Add nvm to .bashrc for persistence"
+  blockinfile:
+    path: "{{ ansible_env.HOME }}/.bashrc"
+    block: |
+      export NVM_DIR="$HOME/.nvm"
+      [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+      [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+    marker: "# {mark} NVM CONFIGURATION"
+  tags:
+    - nvm
+    - node

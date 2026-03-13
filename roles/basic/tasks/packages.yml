@@ -253,5 +253,107 @@
   become: true
   tags: packages
 
-  # ossbasnfr001
-  # 254.56
+- name: "Install zbar-tools"
+  apt: 
+    name: zbar-tools
+    state: present 
+  become: true
+  tags: packages
+
+- name: "Install fzf - fuzzy finder"
+  apt: 
+    name: fzf
+    state: present 
+  become: true
+  tags: packages
+
+- name: "Install ripgrep - fast grep"
+  apt: 
+    name: ripgrep
+    state: present 
+  become: true
+  tags: packages
+
+- name: "Install fd-find - fast find"
+  apt: 
+    name: fd-find
+    state: present 
+  become: true
+  tags: packages
+
+- name: "Install bat - cat with syntax highlighting"
+  apt: 
+    name: bat
+    state: present 
+  become: true
+  tags: packages
+
+- name: "Install jq - JSON processor"
+  apt: 
+    name: jq
+    state: present 
+  become: true
+  tags: packages
+
+- name: "Install yq - YAML processor"
+  apt: 
+    name: yq
+    state: present 
+  become: true
+  tags: packages
+
+- name: "Install tree - directory listing"
+  apt: 
+    name: tree
+    state: present 
+  become: true
+  tags: packages
+
+- name: "Install tmux - terminal multiplexer"
+  apt: 
+    name: tmux
+    state: present 
+  become: true
+  tags: packages
+
+- name: "Install python3-pip"
+  apt: 
+    name: python3-pip
+    state: present 
+  become: true
+  tags: packages
+
+- name: "Install python3-venv"
+  apt: 
+    name: python3-venv
+    state: present 
+  become: true
+  tags: packages
+
+- name: "Install unzip"
+  apt: 
+    name: unzip
+    state: present 
+  become: true
+  tags: packages
+
+- name: "Install wget"
+  apt: 
+    name: wget
+    state: present 
+  become: true
+  tags: packages
+
+- name: "Install lm-sensors - hardware monitoring"
+  apt: 
+    name: lm-sensors
+    state: present 
+  become: true
+  tags: packages
+
+- name: "Install smartmontools - S.M.A.R.T disk monitoring"
+  apt: 
+    name: smartmontools
+    state: present 
+  become: true
+  tags: packages
